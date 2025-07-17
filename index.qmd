@@ -77,7 +77,7 @@ knitr:
 
 - El muestreo aleatorio simple (MAS) consiste en seleccionar unidades al azar desde un listado completo de la población.
 
-    [<img src="imagenes/plots/MAS.jpeg" width="40%"/>]{.center}
+    [<img src="imagenes/plots/MAS2.jpg" width="37%"/>]{.center}
 
 
 - Pero tiene varios problemas cuando queremos aplicarlo en la práctica:
@@ -88,7 +88,6 @@ knitr:
 
 ::: 
 
-CAMBIAR IMAGEN!!
 
 <!-- no es útil en la práctica: es caro, lento y poco controlable -->
 
@@ -198,7 +197,7 @@ INCOMPLETO
 
 [<img src="imagenes/plots/logo_enut.png" width="30%"/>]{.center}
 
-- El diseño muestral de ENUT 2023 implica la obtención de una muestra probabilística estratificada y bietápica.
+- El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.
 
 - Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa (UPM) de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen. 
 
@@ -216,7 +215,9 @@ INCOMPLETO
 :::{.incremental .medium-par}
 - La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país
 
-<!-- - Esta encuesta posee una representatividad a nivel regional -->
+- La II ENUT es representativa a nivel regional de las zonas urbanas del país
+
+    [<img src="imagenes/plots/tamano_enut.jpg" width="85%"/>]{.center}
 
 :::
 
@@ -255,12 +256,12 @@ INCOMPLETO
 
 :::{.incremental .medium-par}
 
-- En un diseño estratificado bietápico, la probabilidad de selección se construye como la multiplicación de probabilidades
-    $$\pi_i = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
+- En un diseño estratificado bietápico, la probabilidad de seleccionar una vivienda es el producto de las probabilidades de cada etapa:
+$$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 - Por ejemplo, supongamos que en el estrato 'A' hay 1000 UPM y se seleccionan 100:
     $$\pi_\text{upm} = 100/1000 = 0.1$$
 - Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60:
-    $$\pi_\text{vivienda|upm}= 30/200 = 0.6$$
+    $$\pi_\text{vivienda|upm}= 60/200 = 0.3$$
 - Así, el factor de expansión teórico nos queda como: 
     $$\text{Factor expansión} = 1/(0.1*0.2) = 300 $$
 - Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población 
@@ -577,9 +578,9 @@ Estándar de encuestas de hogares:
 
 ::: {.medium-par .incremental}
 
-- Veamos un caso de uso con los datos de la Encuesta Nacional Urbana de Seguridad Ciudadana 2023 (*ENUSC*) disponibles en el paquete.
+- Veamos un caso de uso con los datos de la II Encuesta Nacional del Uso del Tiempo.
 
-- Estimaremos y evaluaremos la proporción de hogares victimizados por delitos violentos (*VH_DV*) a nivel regional
+- Estimaremos y evaluaremos la participación y tiempo destinado al trabajo no remunerado por región y sexo.
 
 :::
 
@@ -623,7 +624,9 @@ Veamos el dataset:
 :::{.small-par}
 
 ```{r echo = TRUE}
-enusc_2023 %>% head() %>% kableExtra::kbl()
+load('data/enut1.rdata')
+
+enut1 %>% tail()
 ```
 
 :::
@@ -636,28 +639,43 @@ Generamos el diseño de muestra en base a la metodología publicada:
 ```{r echo = TRUE}
 options(survey.lonely.psu = "certainty")    # tratamiento de la varianza cuando hay solo una upm
 
-dc <- survey::svydesign(ids = ~Conglomerado,
-                        weights = ~Fact_Hog_Reg,    # fexp a nivel regional
-                        strata = ~VarStrat,
-                        check.strata = TRUE,
-                        data = enusc_2023)
+disenio <- survey::svydesign(data = enut1, 
+                             strata = ~varstrat,
+                             ids = ~varunit, 
+                             weights = ~fe_cut)
 
 ```
 
 :::
 
-## [Paquete] calidad | Aplicación (4/7)]{.big-par}
+## [Paquete calidad | Aplicación (4/7)]{.big-par}
 
-Realizamos la estimación:
+Realizamos las estimaciones:
 
 :::{.big-par}
 
 ```{r echo=TRUE}
-VH_DV <- create_prop('VH_DV',                   # variable a evaluar
-                     domains = 'enc_region',    # dominio de interes
-                     design =dc                 # diseño
-                     )
-VH_DV
+
+est_tiempo_tnr <- calidad::create_mean(var = "t_tnr_dt",
+                                       domains = "sexo+region_ord", 
+                                       rm.na = TRUE,
+                                       design = disenio)
+
+est_tiempo_tnr
+
+
+# est_part_tnr <- calidad::create_prop(var = "p_ap_dt",
+#                                      domains = "sexo", 
+#                                      subpop = "dise_tnr", 
+#                                      design = disenio) 
+# 
+# est_part_tnr
+
+# est_part2_tnr <- create_prop(var = "p_tnr_dt",
+#                              domains = "sexo",
+#                              design = disenio)
+# 
+# est_part2_tnr
 
 ```
 
@@ -673,9 +691,14 @@ Evaluamos la calidad de la estimación:
 
 ```{r echo = TRUE}
 
-assess(VH_DV,                        # estimacion con funcion create
-       scheme = 'chile',             # indicamos criterio, chile := estandar de encuestas de hogares
-       ratio_between_0_1 = TRUE)     # estimacion corresponde a una proporcion
+
+assess(est_tiempo_tnr,               # estimacion con funcion create
+       scheme = 'chile')             # indicamos criterio, chile := estandar de encuestas de hogares
+
+
+# assess(est_part2_tnr,                  
+#        scheme = 'chile',             
+#        ratio_between_0_1 = TRUE)     # estimacion corresponde a una proporcion
 
 ```
 
@@ -693,9 +716,8 @@ Se debe cumplir que al menos el 50% del tabulado sea confiable, para ello tenemo
 
 ```{r echo = TRUE}
 
-assess(VH_DV,                        
+assess(est_tiempo_tnr,                        
        scheme = 'chile',          
-       ratio_between_0_1 = TRUE,
        publish = TRUE)     
 
 ```
@@ -712,7 +734,7 @@ assess(VH_DV,
 :::{.incremental .medium-par}
 - Parcialmente si, el paquete posee 4 criterios implementados a los cuales se les puede modificar los parámetros definidos.
 
-- Supongamos que queremos ser muy estrictos y consideraremos confiables solo las estimaciones de tamaño desde 1000:
+- Supongamos que queremos ser muy estrictos y consideraremos confiables solo las estimaciones de tamaño desde 500:
 
   ```{r echo = TRUE, highlightLines = TRUE}
   
@@ -720,11 +742,10 @@ assess(VH_DV,
   default_params_ine = list(df = 9, n = 60, cv_lower_ine = 0.15, cv_upper_ine = 0.3 )
   
   ## evaluacion
-  assess(VH_DV,                        
+  assess(est_tiempo_tnr,                        
          scheme = 'chile',          
-         ratio_between_0_1 = TRUE,
          publish = TRUE,
-         n = 1000)     ## agregamos nuevo tamaño  
+         n = 500)     ## agregamos nuevo tamaño  
   
   ```
 
@@ -732,6 +753,8 @@ assess(VH_DV,
 :::
 
 ## Para finalizar
+
+INCOMPLETO
 
 ::: {.medium-par .incremental}
 

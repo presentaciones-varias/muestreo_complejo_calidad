@@ -388,10 +388,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="index_files/libs/kePrint-0.0.1/kePrint.js"></script>
-
-  <link href="index_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -446,7 +442,7 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>El muestreo aleatorio simple (MAS) consiste en seleccionar unidades al azar desde un listado completo de la población.</p>
-<p><span class="center"><img src="imagenes/plots/MAS.jpeg" width="40%"></span></p></li>
+<p><span class="center"><img src="imagenes/plots/MAS2.jpg" width="37%"></span></p></li>
 <li class="fragment"><p>Pero tiene varios problemas cuando queremos aplicarlo en la práctica:</p>
 <ul>
 <li class="fragment">Es muy costoso</li>
@@ -455,7 +451,6 @@
 </ul></li>
 </ul>
 </div>
-<p>CAMBIAR IMAGEN!!</p>
 <!-- no es útil en la práctica: es caro, lento y poco controlable -->
 </div>
 </section>
@@ -543,7 +538,7 @@
 <div class="medium-par">
 <p><span class="center"><img src="imagenes/plots/logo_enut.png" width="30%"></span></p>
 <ul>
-<li class="fragment"><p>El diseño muestral de ENUT 2023 implica la obtención de una muestra probabilística estratificada y bietápica.</p></li>
+<li class="fragment"><p>El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.</p></li>
 <li class="fragment"><p>Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa (UPM) de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen.</p></li>
 </ul>
 <!-- - En la primera etapa, se selecciona UPM a partir de un muestreo sistemático con probabilidad proporcional al tamaño de la UPM. -->
@@ -557,9 +552,10 @@
 <p>INCOMPLETO</p>
 <div class="medium-par">
 <ul>
-<li class="fragment">La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país</li>
+<li class="fragment"><p>La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país</p></li>
+<li class="fragment"><p>La II ENUT es representativa a nivel regional de las zonas urbanas del país</p>
+<p><span class="center"><img src="imagenes/plots/tamano_enut.jpg" width="85%"></span></p></li>
 </ul>
-<!-- - Esta encuesta posee una representatividad a nivel regional -->
 </div>
 <!-- que cuenten con condiciones físicas y mentales aptas para responder la encuesta y que residan habitualmente en viviendas particulares ocupadas (elegibles), durante el período de trabajo de campo de la encuesta. -->
 </section>
@@ -585,9 +581,9 @@
 <h2><span class="big-par">Factores de expansión (2/3)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment">En un diseño estratificado bietápico, la probabilidad de selección se construye como la multiplicación de probabilidades <span class="math display">\[\pi_i = \pi_\text{upm}* \pi_\text{vivienda|upm}\]</span></li>
+<li class="fragment">En un diseño estratificado bietápico, la probabilidad de seleccionar una vivienda es el producto de las probabilidades de cada etapa: <span class="math display">\[\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}\]</span></li>
 <li class="fragment">Por ejemplo, supongamos que en el estrato ‘A’ hay 1000 UPM y se seleccionan 100: <span class="math display">\[\pi_\text{upm} = 100/1000 = 0.1\]</span></li>
-<li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 30/200 = 0.6\]</span></li>
+<li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 60/200 = 0.3\]</span></li>
 <li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.2) = 300 \]</span></li>
 <li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población</li>
 </ul>
@@ -841,8 +837,8 @@
 <h2><span class="big-par">Paquete calidad | Aplicación (1/7)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Veamos un caso de uso con los datos de la Encuesta Nacional Urbana de Seguridad Ciudadana 2023 (<em>ENUSC</em>) disponibles en el paquete.</p></li>
-<li class="fragment"><p>Estimaremos y evaluaremos la proporción de hogares victimizados por delitos violentos (<em>VH_DV</em>) a nivel regional</p></li>
+<li class="fragment"><p>Veamos un caso de uso con los datos de la II Encuesta Nacional del Uso del Tiempo.</p></li>
+<li class="fragment"><p>Estimaremos y evaluaremos la participación y tiempo destinado al trabajo no remunerado por región y sexo.</p></li>
 </ul>
 </div>
 <div class="fragment">
@@ -872,135 +868,19 @@
 <p>Veamos el dataset:</p>
 <div class="small-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>enusc_2023 <span class="sc">%&gt;%</span> <span class="fu">head</span>() <span class="sc">%&gt;%</span> kableExtra<span class="sc">::</span><span class="fu">kbl</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: right;" data-quarto-table-cell-role="th">enc_region</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">enc_rpc</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Fact_Pers_Reg</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Fact_Pers_Com</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Fact_Hog_Reg</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Fact_Hog_Com</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">VarStrat</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Conglomerado</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">VH_DV</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">VH_DC</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">VP_DV</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">VP_DC</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">rph_sexo</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">rph_edad</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">PAD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">10101</td>
-<td style="text-align: right;">519.89483</td>
-<td style="text-align: right;">425.24526</td>
-<td style="text-align: right;">192.60032</td>
-<td style="text-align: right;">155.96082</td>
-<td style="text-align: right;">20240101</td>
-<td style="text-align: right;">2023003913</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">10202</td>
-<td style="text-align: right;">191.97886</td>
-<td style="text-align: right;">111.78657</td>
-<td style="text-align: right;">55.37923</td>
-<td style="text-align: right;">37.84762</td>
-<td style="text-align: right;">20240202</td>
-<td style="text-align: right;">2023004086</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">6301</td>
-<td style="text-align: right;">184.12335</td>
-<td style="text-align: right;">153.05984</td>
-<td style="text-align: right;">93.13777</td>
-<td style="text-align: right;">89.58831</td>
-<td style="text-align: right;">20236301</td>
-<td style="text-align: right;">2023002211</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">15101</td>
-<td style="text-align: right;">116.17978</td>
-<td style="text-align: right;">131.27119</td>
-<td style="text-align: right;">53.39251</td>
-<td style="text-align: right;">54.95142</td>
-<td style="text-align: right;">20245101</td>
-<td style="text-align: right;">2023007491</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">9101</td>
-<td style="text-align: right;">454.33965</td>
-<td style="text-align: right;">389.41170</td>
-<td style="text-align: right;">170.44871</td>
-<td style="text-align: right;">131.89348</td>
-<td style="text-align: right;">20239101</td>
-<td style="text-align: right;">2023003574</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">16109</td>
-<td style="text-align: right;">49.72242</td>
-<td style="text-align: right;">50.42286</td>
-<td style="text-align: right;">25.05899</td>
-<td style="text-align: right;">23.34552</td>
-<td style="text-align: right;">20246109</td>
-<td style="text-align: right;">2023007707</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1</td>
-</tr>
-</tbody>
-</table>
-
-
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">load</span>(<span class="st">'data/enut1.rdata'</span>)</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>enut1 <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 11
+  varunit        varstrat fe_cut fe_ch p_tnr_dt  t_tnr_dt  p_ap_dt   sexo       region_ord        dise_tnr edad     
+  &lt;chr&gt;             &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl+lbl&gt; &lt;dbl+lbl&gt; &lt;dbl+lbl&gt; &lt;dbl+lbl&gt;  &lt;dbl+lbl&gt;            &lt;dbl&gt; &lt;dbl+lbl&gt;
+1 20230091140002       59  910.  621.  1 [Sí]     1.96     1 [Sí]    2 [Mujer]  12 [La Araucanía]        1 37       
+2 20230102010008       86  659.  448.  1 [Sí]     3.76     1 [Sí]    1 [Hombre] 14 [Los Lagos]           1 47       
+3 20230111010042       89   92.5  63.9 1 [Sí]    15.9      1 [Sí]    2 [Mujer]  15 [Aysén]               1 31       
+4 20230092010007       84  641.  512.  1 [Sí]     3.55     1 [Sí]    1 [Hombre] 12 [La Araucanía]        1 42       
+5 20230092010007       84  414.  512.  1 [Sí]     5.40     1 [Sí]    2 [Mujer]  12 [La Araucanía]        1 43       
+6 20230091080001       47  464.  441.  1 [Sí]     3.37     1 [Sí]    2 [Mujer]  12 [La Araucanía]        1 66       </code></pre>
 </div>
 </div>
 </div>
@@ -1010,45 +890,73 @@
 <p>Generamos el diseño de muestra en base a la metodología publicada:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">options</span>(<span class="at">survey.lonely.psu =</span> <span class="st">"certainty"</span>)    <span class="co"># tratamiento de la varianza cuando hay solo una upm</span></span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a>dc <span class="ot">&lt;-</span> survey<span class="sc">::</span><span class="fu">svydesign</span>(<span class="at">ids =</span> <span class="sc">~</span>Conglomerado,</span>
-<span id="cb3-4"><a href=""></a>                        <span class="at">weights =</span> <span class="sc">~</span>Fact_Hog_Reg,    <span class="co"># fexp a nivel regional</span></span>
-<span id="cb3-5"><a href=""></a>                        <span class="at">strata =</span> <span class="sc">~</span>VarStrat,</span>
-<span id="cb3-6"><a href=""></a>                        <span class="at">check.strata =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-7"><a href=""></a>                        <span class="at">data =</span> enusc_2023)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">options</span>(<span class="at">survey.lonely.psu =</span> <span class="st">"certainty"</span>)    <span class="co"># tratamiento de la varianza cuando hay solo una upm</span></span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>disenio <span class="ot">&lt;-</span> survey<span class="sc">::</span><span class="fu">svydesign</span>(<span class="at">data =</span> enut1, </span>
+<span id="cb4-4"><a href=""></a>                             <span class="at">strata =</span> <span class="sc">~</span>varstrat,</span>
+<span id="cb4-5"><a href=""></a>                             <span class="at">ids =</span> <span class="sc">~</span>varunit, </span>
+<span id="cb4-6"><a href=""></a>                             <span class="at">weights =</span> <span class="sc">~</span>fe_cut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="paquete-calidad-aplicación-47" class="slide level2 big-par">
-<h2>[Paquete] calidad | Aplicación (4/7)]</h2>
-<p>Realizamos la estimación:</p>
+<section id="paquete-calidad-aplicación-47" class="slide level2">
+<h2><span class="big-par">Paquete calidad | Aplicación (4/7)</span></h2>
+<p>Realizamos las estimaciones:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>VH_DV <span class="ot">&lt;-</span> <span class="fu">create_prop</span>(<span class="st">'VH_DV'</span>,                   <span class="co"># variable a evaluar</span></span>
-<span id="cb4-2"><a href=""></a>                     <span class="at">domains =</span> <span class="st">'enc_region'</span>,    <span class="co"># dominio de interes</span></span>
-<span id="cb4-3"><a href=""></a>                     <span class="at">design =</span>dc                 <span class="co"># diseño</span></span>
-<span id="cb4-4"><a href=""></a>                     )</span>
-<span id="cb4-5"><a href=""></a>VH_DV</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>est_tiempo_tnr <span class="ot">&lt;-</span> calidad<span class="sc">::</span><span class="fu">create_mean</span>(<span class="at">var =</span> <span class="st">"t_tnr_dt"</span>,</span>
+<span id="cb5-2"><a href=""></a>                                       <span class="at">domains =</span> <span class="st">"sexo+region_ord"</span>, </span>
+<span id="cb5-3"><a href=""></a>                                       <span class="at">rm.na =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-4"><a href=""></a>                                       <span class="at">design =</span> disenio)</span>
+<span id="cb5-5"><a href=""></a></span>
+<span id="cb5-6"><a href=""></a>est_tiempo_tnr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   enc_region       stat          se   df     n         cv
-1           1 0.09360261 0.007809105  244  1546 0.08342828
-2           2 0.08094008 0.007757483  219  1547 0.09584229
-3           3 0.07485991 0.009585310  152  1013 0.12804331
-4           4 0.04186417 0.005450131  309  1958 0.13018605
-5           5 0.07832234 0.005048450  878  5601 0.06445735
-6           6 0.05527160 0.005561834  425  2999 0.10062733
-7           7 0.04421951 0.003921486  536  4219 0.08868226
-8           8 0.07372329 0.004711330  630  4693 0.06390559
-9           9 0.05037750 0.005321989  424  2603 0.10564218
-10         10 0.04792482 0.005719360  316  2118 0.11934026
-11         11 0.03348320 0.005472555   95   973 0.16344182
-12         12 0.02817208 0.005309555  136  1412 0.18846873
-13         13 0.10309919 0.003051272 2607 14140 0.02959550
-14         14 0.06417123 0.008098127  215  1584 0.12619561
-15         15 0.09738246 0.008623445  209  1237 0.08855235
-16         16 0.05274678 0.005708177  258  2170 0.10821849</code></pre>
+<pre><code>   sexo region_ord     stat         se  df    n         cv
+1     1          1 2.850786 0.13975338  79  488 0.04902276
+2     2          1 4.653895 0.19760710  79  670 0.04246058
+3     1          2 2.404220 0.11175726  92  730 0.04648380
+4     2          2 3.614407 0.12921005  92  932 0.03574861
+5     1          3 2.862225 0.12196770 112  542 0.04261289
+6     2          3 5.129005 0.16408447 112  857 0.03199148
+7     1          4 2.590251 0.14722794 103  495 0.05683927
+8     2          4 4.979465 0.18724234 106  771 0.03760290
+9     1          5 2.716663 0.11565787 153  753 0.04257350
+10    2          5 5.112602 0.13765565 153 1125 0.02692477
+11    1          6 3.251623 0.11662914 184  875 0.03586798
+12    2          6 5.070209 0.11711986 189 1213 0.02309961
+13    1          7 2.993520 0.07357981 331 1774 0.02457969
+14    2          7 5.079991 0.10104013 333 2324 0.01988982
+15    1          8 2.612966 0.12371833 111  656 0.04734785
+16    2          8 5.111210 0.15300452 112  994 0.02993509
+17    1          9 2.402540 0.08010501 144  939 0.03334180
+18    2          9 4.776437 0.10166029 146 1415 0.02128371
+19    1         10 2.563895 0.10642784  85  573 0.04151022
+20    2         10 4.789528 0.15419285  86  844 0.03219374
+21    1         11 2.588808 0.10232444 162  948 0.03952569
+22    2         11 4.804254 0.12391061 163 1517 0.02579185
+23    1         12 2.517390 0.10670686 124  657 0.04238790
+24    2         12 4.721063 0.13517862 129 1028 0.02863309
+25    1         13 2.906624 0.12112146  88  375 0.04167084
+26    2         13 4.784996 0.15607664  90  685 0.03261792
+27    1         14 2.916807 0.13832274 112  489 0.04742266
+28    2         14 4.892955 0.18810307 115  711 0.03844365
+29    1         15 3.006978 0.14372831  68  355 0.04779826
+30    2         15 4.588947 0.17801715  70  547 0.03879259
+31    1         16 1.816797 0.09356889  68  570 0.05150212
+32    2         16 3.424260 0.12264021  68  707 0.03581510</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># est_part_tnr &lt;- calidad::create_prop(var = "p_ap_dt",</span></span>
+<span id="cb7-2"><a href=""></a><span class="co">#                                      domains = "sexo", </span></span>
+<span id="cb7-3"><a href=""></a><span class="co">#                                      subpop = "dise_tnr", </span></span>
+<span id="cb7-4"><a href=""></a><span class="co">#                                      design = disenio) </span></span>
+<span id="cb7-5"><a href=""></a><span class="co"># </span></span>
+<span id="cb7-6"><a href=""></a><span class="co"># est_part_tnr</span></span>
+<span id="cb7-7"><a href=""></a></span>
+<span id="cb7-8"><a href=""></a><span class="co"># est_part2_tnr &lt;- create_prop(var = "p_tnr_dt",</span></span>
+<span id="cb7-9"><a href=""></a><span class="co">#                              domains = "sexo",</span></span>
+<span id="cb7-10"><a href=""></a><span class="co">#                              design = disenio)</span></span>
+<span id="cb7-11"><a href=""></a><span class="co"># </span></span>
+<span id="cb7-12"><a href=""></a><span class="co"># est_part2_tnr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1057,45 +965,46 @@
 <p>Evaluamos la calidad de la estimación:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">assess</span>(VH_DV,                        <span class="co"># estimacion con funcion create</span></span>
-<span id="cb6-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,             <span class="co"># indicamos criterio, chile := estandar de encuestas de hogares</span></span>
-<span id="cb6-3"><a href=""></a>       <span class="at">ratio_between_0_1 =</span> <span class="cn">TRUE</span>)     <span class="co"># estimacion corresponde a una proporcion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,               <span class="co"># estimacion con funcion create</span></span>
+<span id="cb8-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>)             <span class="co"># indicamos criterio, chile := estandar de encuestas de hogares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   enc_region       stat          se   df     n         cv                 eval_n       eval_df prop_est  quadratic
-1           1 0.09360261 0.007809105  244  1546 0.08342828 sufficient sample size sufficient df   &lt;= 0.5 0.02290601
-2           2 0.08094008 0.007757483  219  1547 0.09584229 sufficient sample size sufficient df   &lt;= 0.5 0.02079058
-3           3 0.07485991 0.009585310  152  1013 0.12804331 sufficient sample size sufficient df   &lt;= 0.5 0.01973590
-4           4 0.04186417 0.005450131  309  1958 0.13018605 sufficient sample size sufficient df   &lt;= 0.5 0.01339633
-5           5 0.07832234 0.005048450  878  5601 0.06445735 sufficient sample size sufficient df   &lt;= 0.5 0.02033986
-6           6 0.05527160 0.005561834  425  2999 0.10062733 sufficient sample size sufficient df   &lt;= 0.5 0.01612225
-7           7 0.04421951 0.003921486  536  4219 0.08868226 sufficient sample size sufficient df   &lt;= 0.5 0.01389420
-8           8 0.07372329 0.004711330  630  4693 0.06390559 sufficient sample size sufficient df   &lt;= 0.5 0.01953562
-9           9 0.05037750 0.005321989  424  2603 0.10564218 sufficient sample size sufficient df   &lt;= 0.5 0.01515591
-10         10 0.04792482 0.005719360  316  2118 0.11934026 sufficient sample size sufficient df   &lt;= 0.5 0.01465990
-11         11 0.03348320 0.005472555   95   973 0.16344182 sufficient sample size sufficient df   &lt;= 0.5 0.01154274
-12         12 0.02817208 0.005309555  136  1412 0.18846873 sufficient sample size sufficient df   &lt;= 0.5 0.01028735
-13         13 0.10309919 0.003051272 2607 14140 0.02959550 sufficient sample size sufficient df   &lt;= 0.5 0.02443024
-14         14 0.06417123 0.008098127  215  1584 0.12619561 sufficient sample size sufficient df   &lt;= 0.5 0.01780947
-15         15 0.09738246 0.008623445  209  1237 0.08855235 sufficient sample size sufficient df   &lt;= 0.5 0.02351859
-16         16 0.05274678 0.005708177  258  2170 0.10821849 sufficient sample size sufficient df   &lt;= 0.5 0.01562745
-         eval_se    label
-1  admissible SE reliable
-2  admissible SE reliable
-3  admissible SE reliable
-4  admissible SE reliable
-5  admissible SE reliable
-6  admissible SE reliable
-7  admissible SE reliable
-8  admissible SE reliable
-9  admissible SE reliable
-10 admissible SE reliable
-11 admissible SE reliable
-12 admissible SE reliable
-13 admissible SE reliable
-14 admissible SE reliable
-15 admissible SE reliable
-16 admissible SE reliable</code></pre>
+<pre><code>   sexo region_ord     stat         se  df    n         cv                 eval_n       eval_df    eval_cv    label
+1     1          1 2.850786 0.13975338  79  488 0.04902276 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+2     2          1 4.653895 0.19760710  79  670 0.04246058 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+3     1          2 2.404220 0.11175726  92  730 0.04648380 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+4     2          2 3.614407 0.12921005  92  932 0.03574861 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+5     1          3 2.862225 0.12196770 112  542 0.04261289 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+6     2          3 5.129005 0.16408447 112  857 0.03199148 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+7     1          4 2.590251 0.14722794 103  495 0.05683927 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+8     2          4 4.979465 0.18724234 106  771 0.03760290 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+9     1          5 2.716663 0.11565787 153  753 0.04257350 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+10    2          5 5.112602 0.13765565 153 1125 0.02692477 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+11    1          6 3.251623 0.11662914 184  875 0.03586798 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+12    2          6 5.070209 0.11711986 189 1213 0.02309961 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+13    1          7 2.993520 0.07357981 331 1774 0.02457969 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+14    2          7 5.079991 0.10104013 333 2324 0.01988982 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+15    1          8 2.612966 0.12371833 111  656 0.04734785 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+16    2          8 5.111210 0.15300452 112  994 0.02993509 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+17    1          9 2.402540 0.08010501 144  939 0.03334180 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+18    2          9 4.776437 0.10166029 146 1415 0.02128371 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+19    1         10 2.563895 0.10642784  85  573 0.04151022 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+20    2         10 4.789528 0.15419285  86  844 0.03219374 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+21    1         11 2.588808 0.10232444 162  948 0.03952569 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+22    2         11 4.804254 0.12391061 163 1517 0.02579185 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+23    1         12 2.517390 0.10670686 124  657 0.04238790 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+24    2         12 4.721063 0.13517862 129 1028 0.02863309 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+25    1         13 2.906624 0.12112146  88  375 0.04167084 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+26    2         13 4.784996 0.15607664  90  685 0.03261792 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+27    1         14 2.916807 0.13832274 112  489 0.04742266 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+28    2         14 4.892955 0.18810307 115  711 0.03844365 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+29    1         15 3.006978 0.14372831  68  355 0.04779826 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+30    2         15 4.588947 0.17801715  70  547 0.03879259 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+31    1         16 1.816797 0.09356889  68  570 0.05150212 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+32    2         16 3.424260 0.12264021  68  707 0.03581510 sufficient sample size sufficient df cv &lt;= 0.15 reliable</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># assess(est_part2_tnr,                  </span></span>
+<span id="cb10-2"><a href=""></a><span class="co">#        scheme = 'chile',             </span></span>
+<span id="cb10-3"><a href=""></a><span class="co">#        ratio_between_0_1 = TRUE)     # estimacion corresponde a una proporcion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1106,45 +1015,76 @@
 <p>Se debe cumplir que al menos el 50% del tabulado sea confiable, para ello tenemos el parámetro <em>publish</em> el cual nos ayuda con ese calculo:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">assess</span>(VH_DV,                        </span>
-<span id="cb8-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
-<span id="cb8-3"><a href=""></a>       <span class="at">ratio_between_0_1 =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb8-4"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
+<span id="cb11-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
+<span id="cb11-3"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   enc_region       stat          se   df     n         cv                 eval_n       eval_df prop_est  quadratic
-1           1 0.09360261 0.007809105  244  1546 0.08342828 sufficient sample size sufficient df   &lt;= 0.5 0.02290601
-2           2 0.08094008 0.007757483  219  1547 0.09584229 sufficient sample size sufficient df   &lt;= 0.5 0.02079058
-3           3 0.07485991 0.009585310  152  1013 0.12804331 sufficient sample size sufficient df   &lt;= 0.5 0.01973590
-4           4 0.04186417 0.005450131  309  1958 0.13018605 sufficient sample size sufficient df   &lt;= 0.5 0.01339633
-5           5 0.07832234 0.005048450  878  5601 0.06445735 sufficient sample size sufficient df   &lt;= 0.5 0.02033986
-6           6 0.05527160 0.005561834  425  2999 0.10062733 sufficient sample size sufficient df   &lt;= 0.5 0.01612225
-7           7 0.04421951 0.003921486  536  4219 0.08868226 sufficient sample size sufficient df   &lt;= 0.5 0.01389420
-8           8 0.07372329 0.004711330  630  4693 0.06390559 sufficient sample size sufficient df   &lt;= 0.5 0.01953562
-9           9 0.05037750 0.005321989  424  2603 0.10564218 sufficient sample size sufficient df   &lt;= 0.5 0.01515591
-10         10 0.04792482 0.005719360  316  2118 0.11934026 sufficient sample size sufficient df   &lt;= 0.5 0.01465990
-11         11 0.03348320 0.005472555   95   973 0.16344182 sufficient sample size sufficient df   &lt;= 0.5 0.01154274
-12         12 0.02817208 0.005309555  136  1412 0.18846873 sufficient sample size sufficient df   &lt;= 0.5 0.01028735
-13         13 0.10309919 0.003051272 2607 14140 0.02959550 sufficient sample size sufficient df   &lt;= 0.5 0.02443024
-14         14 0.06417123 0.008098127  215  1584 0.12619561 sufficient sample size sufficient df   &lt;= 0.5 0.01780947
-15         15 0.09738246 0.008623445  209  1237 0.08855235 sufficient sample size sufficient df   &lt;= 0.5 0.02351859
-16         16 0.05274678 0.005708177  258  2170 0.10821849 sufficient sample size sufficient df   &lt;= 0.5 0.01562745
-         eval_se    label publication                    pass
-1  admissible SE reliable     publish 100% reliable estimates
-2  admissible SE reliable     publish 100% reliable estimates
-3  admissible SE reliable     publish 100% reliable estimates
-4  admissible SE reliable     publish 100% reliable estimates
-5  admissible SE reliable     publish 100% reliable estimates
-6  admissible SE reliable     publish 100% reliable estimates
-7  admissible SE reliable     publish 100% reliable estimates
-8  admissible SE reliable     publish 100% reliable estimates
-9  admissible SE reliable     publish 100% reliable estimates
-10 admissible SE reliable     publish 100% reliable estimates
-11 admissible SE reliable     publish 100% reliable estimates
-12 admissible SE reliable     publish 100% reliable estimates
-13 admissible SE reliable     publish 100% reliable estimates
-14 admissible SE reliable     publish 100% reliable estimates
-15 admissible SE reliable     publish 100% reliable estimates
-16 admissible SE reliable     publish 100% reliable estimates</code></pre>
+<pre><code>   sexo region_ord     stat         se  df    n         cv                 eval_n       eval_df    eval_cv    label
+1     1          1 2.850786 0.13975338  79  488 0.04902276 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+2     2          1 4.653895 0.19760710  79  670 0.04246058 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+3     1          2 2.404220 0.11175726  92  730 0.04648380 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+4     2          2 3.614407 0.12921005  92  932 0.03574861 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+5     1          3 2.862225 0.12196770 112  542 0.04261289 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+6     2          3 5.129005 0.16408447 112  857 0.03199148 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+7     1          4 2.590251 0.14722794 103  495 0.05683927 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+8     2          4 4.979465 0.18724234 106  771 0.03760290 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+9     1          5 2.716663 0.11565787 153  753 0.04257350 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+10    2          5 5.112602 0.13765565 153 1125 0.02692477 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+11    1          6 3.251623 0.11662914 184  875 0.03586798 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+12    2          6 5.070209 0.11711986 189 1213 0.02309961 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+13    1          7 2.993520 0.07357981 331 1774 0.02457969 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+14    2          7 5.079991 0.10104013 333 2324 0.01988982 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+15    1          8 2.612966 0.12371833 111  656 0.04734785 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+16    2          8 5.111210 0.15300452 112  994 0.02993509 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+17    1          9 2.402540 0.08010501 144  939 0.03334180 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+18    2          9 4.776437 0.10166029 146 1415 0.02128371 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+19    1         10 2.563895 0.10642784  85  573 0.04151022 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+20    2         10 4.789528 0.15419285  86  844 0.03219374 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+21    1         11 2.588808 0.10232444 162  948 0.03952569 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+22    2         11 4.804254 0.12391061 163 1517 0.02579185 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+23    1         12 2.517390 0.10670686 124  657 0.04238790 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+24    2         12 4.721063 0.13517862 129 1028 0.02863309 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+25    1         13 2.906624 0.12112146  88  375 0.04167084 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+26    2         13 4.784996 0.15607664  90  685 0.03261792 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+27    1         14 2.916807 0.13832274 112  489 0.04742266 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+28    2         14 4.892955 0.18810307 115  711 0.03844365 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+29    1         15 3.006978 0.14372831  68  355 0.04779826 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+30    2         15 4.588947 0.17801715  70  547 0.03879259 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+31    1         16 1.816797 0.09356889  68  570 0.05150212 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+32    2         16 3.424260 0.12264021  68  707 0.03581510 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+   publication                    pass
+1      publish 100% reliable estimates
+2      publish 100% reliable estimates
+3      publish 100% reliable estimates
+4      publish 100% reliable estimates
+5      publish 100% reliable estimates
+6      publish 100% reliable estimates
+7      publish 100% reliable estimates
+8      publish 100% reliable estimates
+9      publish 100% reliable estimates
+10     publish 100% reliable estimates
+11     publish 100% reliable estimates
+12     publish 100% reliable estimates
+13     publish 100% reliable estimates
+14     publish 100% reliable estimates
+15     publish 100% reliable estimates
+16     publish 100% reliable estimates
+17     publish 100% reliable estimates
+18     publish 100% reliable estimates
+19     publish 100% reliable estimates
+20     publish 100% reliable estimates
+21     publish 100% reliable estimates
+22     publish 100% reliable estimates
+23     publish 100% reliable estimates
+24     publish 100% reliable estimates
+25     publish 100% reliable estimates
+26     publish 100% reliable estimates
+27     publish 100% reliable estimates
+28     publish 100% reliable estimates
+29     publish 100% reliable estimates
+30     publish 100% reliable estimates
+31     publish 100% reliable estimates
+32     publish 100% reliable estimates</code></pre>
 </div>
 </div>
 </div>
@@ -1157,52 +1097,83 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>Parcialmente si, el paquete posee 4 criterios implementados a los cuales se les puede modificar los parámetros definidos.</p></li>
-<li class="fragment"><p>Supongamos que queremos ser muy estrictos y consideraremos confiables solo las estimaciones de tamaño desde 1000:</p>
+<li class="fragment"><p>Supongamos que queremos ser muy estrictos y consideraremos confiables solo las estimaciones de tamaño desde 500:</p>
 <div class="cell" data-highlightlines="true">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="do">## parametros INE hogares</span></span>
-<span id="cb10-2"><a href=""></a>default_params_ine <span class="ot">=</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">9</span>, <span class="at">n =</span> <span class="dv">60</span>, <span class="at">cv_lower_ine =</span> <span class="fl">0.15</span>, <span class="at">cv_upper_ine =</span> <span class="fl">0.3</span> )</span>
-<span id="cb10-3"><a href=""></a></span>
-<span id="cb10-4"><a href=""></a><span class="do">## evaluacion</span></span>
-<span id="cb10-5"><a href=""></a><span class="fu">assess</span>(VH_DV,                        </span>
-<span id="cb10-6"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
-<span id="cb10-7"><a href=""></a>       <span class="at">ratio_between_0_1 =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-8"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-9"><a href=""></a>       <span class="at">n =</span> <span class="dv">1000</span>)     <span class="do">## agregamos nuevo tamaño  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="do">## parametros INE hogares</span></span>
+<span id="cb13-2"><a href=""></a>default_params_ine <span class="ot">=</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">9</span>, <span class="at">n =</span> <span class="dv">60</span>, <span class="at">cv_lower_ine =</span> <span class="fl">0.15</span>, <span class="at">cv_upper_ine =</span> <span class="fl">0.3</span> )</span>
+<span id="cb13-3"><a href=""></a></span>
+<span id="cb13-4"><a href=""></a><span class="do">## evaluacion</span></span>
+<span id="cb13-5"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
+<span id="cb13-6"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
+<span id="cb13-7"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-8"><a href=""></a>       <span class="at">n =</span> <span class="dv">500</span>)     <span class="do">## agregamos nuevo tamaño  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   enc_region       stat          se   df     n         cv                   eval_n       eval_df prop_est  quadratic
-1           1 0.09360261 0.007809105  244  1546 0.08342828   sufficient sample size sufficient df   &lt;= 0.5 0.02290601
-2           2 0.08094008 0.007757483  219  1547 0.09584229   sufficient sample size sufficient df   &lt;= 0.5 0.02079058
-3           3 0.07485991 0.009585310  152  1013 0.12804331   sufficient sample size sufficient df   &lt;= 0.5 0.01973590
-4           4 0.04186417 0.005450131  309  1958 0.13018605   sufficient sample size sufficient df   &lt;= 0.5 0.01339633
-5           5 0.07832234 0.005048450  878  5601 0.06445735   sufficient sample size sufficient df   &lt;= 0.5 0.02033986
-6           6 0.05527160 0.005561834  425  2999 0.10062733   sufficient sample size sufficient df   &lt;= 0.5 0.01612225
-7           7 0.04421951 0.003921486  536  4219 0.08868226   sufficient sample size sufficient df   &lt;= 0.5 0.01389420
-8           8 0.07372329 0.004711330  630  4693 0.06390559   sufficient sample size sufficient df   &lt;= 0.5 0.01953562
-9           9 0.05037750 0.005321989  424  2603 0.10564218   sufficient sample size sufficient df   &lt;= 0.5 0.01515591
-10         10 0.04792482 0.005719360  316  2118 0.11934026   sufficient sample size sufficient df   &lt;= 0.5 0.01465990
-11         11 0.03348320 0.005472555   95   973 0.16344182 insufficient sample size sufficient df   &lt;= 0.5 0.01154274
-12         12 0.02817208 0.005309555  136  1412 0.18846873   sufficient sample size sufficient df   &lt;= 0.5 0.01028735
-13         13 0.10309919 0.003051272 2607 14140 0.02959550   sufficient sample size sufficient df   &lt;= 0.5 0.02443024
-14         14 0.06417123 0.008098127  215  1584 0.12619561   sufficient sample size sufficient df   &lt;= 0.5 0.01780947
-15         15 0.09738246 0.008623445  209  1237 0.08855235   sufficient sample size sufficient df   &lt;= 0.5 0.02351859
-16         16 0.05274678 0.005708177  258  2170 0.10821849   sufficient sample size sufficient df   &lt;= 0.5 0.01562745
-         eval_se        label publication                      pass
-1  admissible SE     reliable     publish 93.75% reliable estimates
-2  admissible SE     reliable     publish 93.75% reliable estimates
-3  admissible SE     reliable     publish 93.75% reliable estimates
-4  admissible SE     reliable     publish 93.75% reliable estimates
-5  admissible SE     reliable     publish 93.75% reliable estimates
-6  admissible SE     reliable     publish 93.75% reliable estimates
-7  admissible SE     reliable     publish 93.75% reliable estimates
-8  admissible SE     reliable     publish 93.75% reliable estimates
-9  admissible SE     reliable     publish 93.75% reliable estimates
-10 admissible SE     reliable     publish 93.75% reliable estimates
-11 admissible SE non-reliable     publish 93.75% reliable estimates
-12 admissible SE     reliable     publish 93.75% reliable estimates
-13 admissible SE     reliable     publish 93.75% reliable estimates
-14 admissible SE     reliable     publish 93.75% reliable estimates
-15 admissible SE     reliable     publish 93.75% reliable estimates
-16 admissible SE     reliable     publish 93.75% reliable estimates</code></pre>
+<pre><code>   sexo region_ord     stat         se  df    n         cv                   eval_n       eval_df    eval_cv
+1     1          1 2.850786 0.13975338  79  488 0.04902276 insufficient sample size sufficient df cv &lt;= 0.15
+2     2          1 4.653895 0.19760710  79  670 0.04246058   sufficient sample size sufficient df cv &lt;= 0.15
+3     1          2 2.404220 0.11175726  92  730 0.04648380   sufficient sample size sufficient df cv &lt;= 0.15
+4     2          2 3.614407 0.12921005  92  932 0.03574861   sufficient sample size sufficient df cv &lt;= 0.15
+5     1          3 2.862225 0.12196770 112  542 0.04261289   sufficient sample size sufficient df cv &lt;= 0.15
+6     2          3 5.129005 0.16408447 112  857 0.03199148   sufficient sample size sufficient df cv &lt;= 0.15
+7     1          4 2.590251 0.14722794 103  495 0.05683927 insufficient sample size sufficient df cv &lt;= 0.15
+8     2          4 4.979465 0.18724234 106  771 0.03760290   sufficient sample size sufficient df cv &lt;= 0.15
+9     1          5 2.716663 0.11565787 153  753 0.04257350   sufficient sample size sufficient df cv &lt;= 0.15
+10    2          5 5.112602 0.13765565 153 1125 0.02692477   sufficient sample size sufficient df cv &lt;= 0.15
+11    1          6 3.251623 0.11662914 184  875 0.03586798   sufficient sample size sufficient df cv &lt;= 0.15
+12    2          6 5.070209 0.11711986 189 1213 0.02309961   sufficient sample size sufficient df cv &lt;= 0.15
+13    1          7 2.993520 0.07357981 331 1774 0.02457969   sufficient sample size sufficient df cv &lt;= 0.15
+14    2          7 5.079991 0.10104013 333 2324 0.01988982   sufficient sample size sufficient df cv &lt;= 0.15
+15    1          8 2.612966 0.12371833 111  656 0.04734785   sufficient sample size sufficient df cv &lt;= 0.15
+16    2          8 5.111210 0.15300452 112  994 0.02993509   sufficient sample size sufficient df cv &lt;= 0.15
+17    1          9 2.402540 0.08010501 144  939 0.03334180   sufficient sample size sufficient df cv &lt;= 0.15
+18    2          9 4.776437 0.10166029 146 1415 0.02128371   sufficient sample size sufficient df cv &lt;= 0.15
+19    1         10 2.563895 0.10642784  85  573 0.04151022   sufficient sample size sufficient df cv &lt;= 0.15
+20    2         10 4.789528 0.15419285  86  844 0.03219374   sufficient sample size sufficient df cv &lt;= 0.15
+21    1         11 2.588808 0.10232444 162  948 0.03952569   sufficient sample size sufficient df cv &lt;= 0.15
+22    2         11 4.804254 0.12391061 163 1517 0.02579185   sufficient sample size sufficient df cv &lt;= 0.15
+23    1         12 2.517390 0.10670686 124  657 0.04238790   sufficient sample size sufficient df cv &lt;= 0.15
+24    2         12 4.721063 0.13517862 129 1028 0.02863309   sufficient sample size sufficient df cv &lt;= 0.15
+25    1         13 2.906624 0.12112146  88  375 0.04167084 insufficient sample size sufficient df cv &lt;= 0.15
+26    2         13 4.784996 0.15607664  90  685 0.03261792   sufficient sample size sufficient df cv &lt;= 0.15
+27    1         14 2.916807 0.13832274 112  489 0.04742266 insufficient sample size sufficient df cv &lt;= 0.15
+28    2         14 4.892955 0.18810307 115  711 0.03844365   sufficient sample size sufficient df cv &lt;= 0.15
+29    1         15 3.006978 0.14372831  68  355 0.04779826 insufficient sample size sufficient df cv &lt;= 0.15
+30    2         15 4.588947 0.17801715  70  547 0.03879259   sufficient sample size sufficient df cv &lt;= 0.15
+31    1         16 1.816797 0.09356889  68  570 0.05150212   sufficient sample size sufficient df cv &lt;= 0.15
+32    2         16 3.424260 0.12264021  68  707 0.03581510   sufficient sample size sufficient df cv &lt;= 0.15
+          label publication                      pass
+1  non-reliable     publish 84.38% reliable estimates
+2      reliable     publish 84.38% reliable estimates
+3      reliable     publish 84.38% reliable estimates
+4      reliable     publish 84.38% reliable estimates
+5      reliable     publish 84.38% reliable estimates
+6      reliable     publish 84.38% reliable estimates
+7  non-reliable     publish 84.38% reliable estimates
+8      reliable     publish 84.38% reliable estimates
+9      reliable     publish 84.38% reliable estimates
+10     reliable     publish 84.38% reliable estimates
+11     reliable     publish 84.38% reliable estimates
+12     reliable     publish 84.38% reliable estimates
+13     reliable     publish 84.38% reliable estimates
+14     reliable     publish 84.38% reliable estimates
+15     reliable     publish 84.38% reliable estimates
+16     reliable     publish 84.38% reliable estimates
+17     reliable     publish 84.38% reliable estimates
+18     reliable     publish 84.38% reliable estimates
+19     reliable     publish 84.38% reliable estimates
+20     reliable     publish 84.38% reliable estimates
+21     reliable     publish 84.38% reliable estimates
+22     reliable     publish 84.38% reliable estimates
+23     reliable     publish 84.38% reliable estimates
+24     reliable     publish 84.38% reliable estimates
+25 non-reliable     publish 84.38% reliable estimates
+26     reliable     publish 84.38% reliable estimates
+27 non-reliable     publish 84.38% reliable estimates
+28     reliable     publish 84.38% reliable estimates
+29 non-reliable     publish 84.38% reliable estimates
+30     reliable     publish 84.38% reliable estimates
+31     reliable     publish 84.38% reliable estimates
+32     reliable     publish 84.38% reliable estimates</code></pre>
 </div>
 </div></li>
 </ul>
@@ -1211,6 +1182,7 @@
 </section>
 <section id="para-finalizar" class="slide level2">
 <h2>Para finalizar</h2>
+<p>INCOMPLETO</p>
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>Para mayor información sobre el uso del paquete, están disponibles los tutoriales en la pag del INE <a href="https://www.ine.gob.cl/calidad-estadistica/directrices-metodologicas/tutorial-paquete-calidad">link</a> y en cran <a href="https://cran.r-project.org/web/packages/calidad/vignettes/tutorial.html">link</a></p></li>
