@@ -595,8 +595,8 @@
 <ul>
 <li class="fragment">En un diseño estratificado bietápico, la probabilidad de seleccionar una vivienda es el producto de las probabilidades de cada etapa: <span class="math display">\[\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}\]</span></li>
 <li class="fragment">Por ejemplo, supongamos que en el estrato ‘A’ hay 1000 UPM y se seleccionan 100: <span class="math display">\[\pi_\text{upm} = 100/1000 = 0.1\]</span></li>
-<li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 30/200 = 0.6\]</span></li>
-<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.2) = 300 \]</span></li>
+<li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 60/200 = 0.3\]</span></li>
+<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.3) = 300 \]</span></li>
 <li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población</li>
 </ul>
 </div>
@@ -851,7 +851,7 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>Veamos un caso de uso con los datos de la II Encuesta Nacional del Uso del Tiempo.</p></li>
-<li class="fragment"><p>Estimaremos y evaluaremos la participación y tiempo destinado al trabajo no remunerado por región y sexo.</p></li>
+<li class="fragment"><p>Estimaremos y evaluaremos el tiempo destinado al trabajo no remunerado por región y sexo.</p></li>
 </ul>
 </div>
 <div class="fragment">
@@ -958,18 +958,6 @@
 31    1         16 1.816797 0.09356889  68  570 0.05150212
 32    2         16 3.424260 0.12264021  68  707 0.03581510</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># est_part_tnr &lt;- calidad::create_prop(var = "p_ap_dt",</span></span>
-<span id="cb7-2"><a href=""></a><span class="co">#                                      domains = "sexo", </span></span>
-<span id="cb7-3"><a href=""></a><span class="co">#                                      subpop = "dise_tnr", </span></span>
-<span id="cb7-4"><a href=""></a><span class="co">#                                      design = disenio) </span></span>
-<span id="cb7-5"><a href=""></a><span class="co"># </span></span>
-<span id="cb7-6"><a href=""></a><span class="co"># est_part_tnr</span></span>
-<span id="cb7-7"><a href=""></a></span>
-<span id="cb7-8"><a href=""></a><span class="co"># est_part2_tnr &lt;- create_prop(var = "p_tnr_dt",</span></span>
-<span id="cb7-9"><a href=""></a><span class="co">#                              domains = "sexo",</span></span>
-<span id="cb7-10"><a href=""></a><span class="co">#                              design = disenio)</span></span>
-<span id="cb7-11"><a href=""></a><span class="co"># </span></span>
-<span id="cb7-12"><a href=""></a><span class="co"># est_part2_tnr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -978,8 +966,8 @@
 <p>Evaluamos la calidad de la estimación:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,               <span class="co"># estimacion con funcion create</span></span>
-<span id="cb8-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>)             <span class="co"># indicamos criterio, chile := estandar de encuestas de hogares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,               <span class="co"># estimacion con funcion create</span></span>
+<span id="cb7-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>)             <span class="co"># indicamos criterio, chile := estandar de encuestas de hogares</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   sexo region_ord     stat         se  df    n         cv                 eval_n       eval_df    eval_cv    label
 1     1          1 2.850786 0.13975338  79  488 0.04902276 sufficient sample size sufficient df cv &lt;= 0.15 reliable
@@ -1015,9 +1003,6 @@
 31    1         16 1.816797 0.09356889  68  570 0.05150212 sufficient sample size sufficient df cv &lt;= 0.15 reliable
 32    2         16 3.424260 0.12264021  68  707 0.03581510 sufficient sample size sufficient df cv &lt;= 0.15 reliable</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># assess(est_part2_tnr,                  </span></span>
-<span id="cb10-2"><a href=""></a><span class="co">#        scheme = 'chile',             </span></span>
-<span id="cb10-3"><a href=""></a><span class="co">#        ratio_between_0_1 = TRUE)     # estimacion corresponde a una proporcion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1028,9 +1013,9 @@
 <p>Se debe cumplir que al menos el 50% del tabulado sea confiable, para ello tenemos el parámetro <em>publish</em> el cual nos ayuda con ese calculo:</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
-<span id="cb11-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
-<span id="cb11-3"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
+<span id="cb9-2"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
+<span id="cb9-3"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   sexo region_ord     stat         se  df    n         cv                 eval_n       eval_df    eval_cv    label
 1     1          1 2.850786 0.13975338  79  488 0.04902276 sufficient sample size sufficient df cv &lt;= 0.15 reliable
@@ -1112,14 +1097,14 @@
 <li class="fragment"><p>Parcialmente si, el paquete posee 4 criterios implementados a los cuales se les puede modificar los parámetros definidos.</p></li>
 <li class="fragment"><p>Supongamos que queremos ser muy estrictos y consideraremos confiables solo las estimaciones de tamaño desde 500:</p>
 <div class="cell" data-highlightlines="true">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="do">## parametros INE hogares</span></span>
-<span id="cb13-2"><a href=""></a>default_params_ine <span class="ot">=</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">9</span>, <span class="at">n =</span> <span class="dv">60</span>, <span class="at">cv_lower_ine =</span> <span class="fl">0.15</span>, <span class="at">cv_upper_ine =</span> <span class="fl">0.3</span> )</span>
-<span id="cb13-3"><a href=""></a></span>
-<span id="cb13-4"><a href=""></a><span class="do">## evaluacion</span></span>
-<span id="cb13-5"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
-<span id="cb13-6"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
-<span id="cb13-7"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb13-8"><a href=""></a>       <span class="at">n =</span> <span class="dv">500</span>)     <span class="do">## agregamos nuevo tamaño  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="do">## parametros INE hogares</span></span>
+<span id="cb11-2"><a href=""></a>default_params_ine <span class="ot">=</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">9</span>, <span class="at">n =</span> <span class="dv">60</span>, <span class="at">cv_lower_ine =</span> <span class="fl">0.15</span>, <span class="at">cv_upper_ine =</span> <span class="fl">0.3</span> )</span>
+<span id="cb11-3"><a href=""></a></span>
+<span id="cb11-4"><a href=""></a><span class="do">## evaluacion</span></span>
+<span id="cb11-5"><a href=""></a><span class="fu">assess</span>(est_tiempo_tnr,                        </span>
+<span id="cb11-6"><a href=""></a>       <span class="at">scheme =</span> <span class="st">'chile'</span>,          </span>
+<span id="cb11-7"><a href=""></a>       <span class="at">publish =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-8"><a href=""></a>       <span class="at">n =</span> <span class="dv">500</span>)     <span class="do">## agregamos nuevo tamaño  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   sexo region_ord     stat         se  df    n         cv                   eval_n       eval_df    eval_cv
 1     1          1 2.850786 0.13975338  79  488 0.04902276 insufficient sample size sufficient df cv &lt;= 0.15

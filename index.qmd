@@ -604,7 +604,7 @@ Estándar de encuestas de hogares:
 
 - Veamos un caso de uso con los datos de la II Encuesta Nacional del Uso del Tiempo.
 
-- Estimaremos y evaluaremos la participación y tiempo destinado al trabajo no remunerado por región y sexo.
+- Estimaremos y evaluaremos el tiempo destinado al trabajo no remunerado por región y sexo.
 
 :::
 
@@ -687,20 +687,6 @@ est_tiempo_tnr <- calidad::create_mean(var = "t_tnr_dt",
 
 est_tiempo_tnr
 
-
-# est_part_tnr <- calidad::create_prop(var = "p_ap_dt",
-#                                      domains = "sexo", 
-#                                      subpop = "dise_tnr", 
-#                                      design = disenio) 
-# 
-# est_part_tnr
-
-# est_part2_tnr <- create_prop(var = "p_tnr_dt",
-#                              domains = "sexo",
-#                              design = disenio)
-# 
-# est_part2_tnr
-
 ```
 
 :::
@@ -719,10 +705,6 @@ Evaluamos la calidad de la estimación:
 assess(est_tiempo_tnr,               # estimacion con funcion create
        scheme = 'chile')             # indicamos criterio, chile := estandar de encuestas de hogares
 
-
-# assess(est_part2_tnr,                  
-#        scheme = 'chile',             
-#        ratio_between_0_1 = TRUE)     # estimacion corresponde a una proporcion
 
 ```
 
