@@ -422,7 +422,7 @@
 <li><p>Muestreo complejo</p>
 <ul>
 <li>Marco muestral de viviendas</li>
-<li>Estratos, conglomerados y UPM</li>
+<li>Estratos y conglomerados</li>
 <li>Diseño ENUT</li>
 </ul></li>
 <li><p>Factores de Expansión</p></li>
@@ -451,11 +451,11 @@
 <ul>
 <li class="fragment">Es muy costoso</li>
 <li class="fragment">No garantiza representación de subgrupos importantes</li>
-<li class="fragment">Alta incertidumbre en la obtención del tipo de muestra que se obtiene</li>
+<li class="fragment">Posibilidad de muestras desafortunadas</li>
 </ul></li>
 </ul>
+<!-- - Alta incertidumbre en la obtención del tipo de muestra que se obtiene -->
 </div>
-<p>CAMBIAR IMAGEN!!</p>
 <!-- no es útil en la práctica: es caro, lento y poco controlable -->
 </div>
 </section>
@@ -466,71 +466,82 @@
 <li class="fragment"><p>Para enfrentar las limitaciones del MAS, se usan diseños de muestreo complejo que combinan diferentes estrategias tales como:</p>
 <ul>
 <li class="fragment">Estratificación</li>
-<li class="fragment">Muestreo por conglomerados</li>
+<li class="fragment">Conglomeración</li>
 <li class="fragment">Diseños multietápicos</li>
 <li class="fragment">Seleccion sistemática, entre otros.</li>
 </ul></li>
-<li class="fragment"><p>Esto ayuda a reducir costos y obtener muestras lo más cercanas a la realidad, incluyendo información de diferentes sectores y subgrupos.</p></li>
-<li class="fragment"><p>Pero para aplicar cualquiera de estas técnicas, necesitamos saber cuántas viviendas hay, dónde están y cómo se agrupan territorialmente.</p></li>
+<li class="fragment"><p>Esto ayuda a reducir costos y obtener muestras representativas de la realidad, garantizando presencia y, en algunos casos, representatividad de subgrupos de interés.</p></li>
+<li class="fragment"><p>Pero para aplicar cualquiera de estas técnicas, se requiere contar con listados de unidades organizadas según ciertos atributos.</p></li>
 </ul>
 </div>
 <!-- ¿Cómo sabemos cuántas viviendas hay, dónde están y cómo se organizan territorialmente? -->
 <!-- ¿Qué podemos hacer para obtener muestras que se asemejen más a la situación a estudiar? -->
+<!-- Pero para aplicar cualquiera de estas técnicas se requiere contar con listados de unidades organizadas según ciertos atributos (por ejemplo, de identificación geográfica, socioeconómica, o por tipos de subpoblaciones) donde, a partir de estos, se pueda caracterizar y generar estratos de muestreo y conglomerados que permitan la selección de muestras complejas. -->
 </section>
 <section id="muestreo-complejo-marco-muestral-de-viviendas-12" class="slide level2">
 <h2><span class="big-par">Muestreo complejo | Marco Muestral de Viviendas (1/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>El Marco Muestral de Viviendas (MMV) es una herramienta que nos permite aplicar diseños probabilísticos de forma eficiente y con cobertura nacional.</p></li>
+<li class="fragment"><p>Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.</p></li>
+<li class="fragment"><p>De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.</p></li>
+<li class="fragment"><p>En encuestas de hogares, se utiliza el <em>Marco Muestral de Viviendas</em> (MMV)</p></li>
+</ul>
+<!-- - El Marco Muestral de Viviendas (MMV) es una herramienta que nos permite aplicar diseños probabilísticos de forma eficiente y con cobertura nacional. -->
+<ul>
 <li class="fragment"><p>Se basa principalmente en el Censo de población y vivienda, y se va actualizando con datos administrativos e información recolectada en terreno 📝</p></li>
 <li class="fragment"><p>Tiene una cobertura de las 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena perteneciente a la Región de Magallanes).</p></li>
 </ul>
 </div>
+<!-- “El Marco Muestral de Viviendas (MMV)”  ->  “Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permiten seleccionar muestras probabilísticas a lo largo del período intercensal. De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal”  -->
+<!-- -También se identifican zonas de exclusión que no pertenecen a la población objetivo.  -->
 </section>
 <section id="muestreo-complejo-marco-muestral-de-viviendas-22" class="slide level2">
 <h2><span class="big-par">Muestreo complejo | Marco Muestral de Viviendas (2/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.</p></li>
+<li class="fragment"><p>El MMV organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.</p></li>
 <li class="fragment"><p>Cuenta con una estratificación socioeconómica que se basa en un análisis de diversas variables recopiladas en el Censo 2017 y se realiza a nivel de UPM.</p>
 <p><span class="center"><img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="35%"></span></p></li>
 </ul>
 </div>
-<!-- - Organiza las viviendas jerárquicamente: región -> provincia -> comuna -> zona censal -> manzanas -->
 <!-- - entonces el mmv nos entrega una base completa y organizada de todas las viviendas del país -->
 <div class="fragment">
-<p><span class="center">¿Cómo seleccionamos muestra? ¿A quienes elegimos? ¿Cómo garantizar que se identifiquen todos los grupos? 🤔</span></p>
+<p><span class="center">¿Cómo seleccionamos muestra? ¿A quienes elegimos? ¿Cómo garantizar que se identifiquen todos los subgrupos de interés? 🤔</span></p>
 </div>
 </section>
-<section id="muestreo-complejo-estratos-conglomerados-y-upm-12" class="slide level2">
-<h2><span class="big-par">Muestreo Complejo | Estratos, conglomerados y UPM (1/2)</span></h2>
+<section id="muestreo-complejo-estratos-y-conglomerados-12" class="slide level2">
+<h2><span class="big-par">Muestreo Complejo | Estratos y conglomerados (1/2)</span></h2>
 <!-- Para responder estas preguntas, usamos dos herramientas fundamentales en el diseño muestral: estratificación y selección de conglomerados -->
 <div class="medium-par">
 <ul>
 <li class="fragment"><p><strong>Estratificación</strong>:</p>
 <ul>
-<li class="fragment">División de la población en grupos (estratos) homogéneos mutuamente excluyentes</li>
-<li class="fragment">Esto permite garantizar representación de todos los subgrupos relevantes (como zonas urbanas/rurales, regiones o niveles socioeconómicos).</li>
-<li class="fragment">Por ejemplo realizar una división por zona geográfica o nivel socioeconómico</li>
+<li class="fragment">División de la población en grupos (estratos) homogéneos mutuamente excluyentes.</li>
+<li class="fragment">Esto permite garantizar presencia de todos los subgrupos relevantes (como zonas urbanas/rurales, regiones o niveles socioeconómicos).</li>
 </ul></li>
-<li class="fragment"><p><strong>Conglomerados</strong>:</p>
+</ul>
+<!-- - Por ejemplo realizar una división por zona geográfica o nivel socioeconómico -->
 <ul>
-<li class="fragment">Grupos naturales conformados por elementos heterogéneos de la población, pero que tienen algo en común (ej manzanas)</li>
-<li class="fragment">Desde esos grupos, seleccionamos aleatoriamente algunos para nuestra muestra</li>
-<li class="fragment">El primer grupo de selección es conocido como UPM</li>
+<li class="fragment"><strong>Conglomeración</strong>:
+<ul>
+<li class="fragment">Conjunto de unidades heterogéneas principalmente con relación a alguna variable de interés, representativos de toda la población en su conjunto.</li>
+<li class="fragment">Desde esos grupos se seleccionan algunos con una probabilidad conocida.</li>
+<li class="fragment">El primer grupo de selección es conocido como UPM MODIFICAR!!!</li>
 </ul></li>
 </ul>
 </div>
+<p><!-- - Desde esos grupos se seleccionan algunos con una probabilidad conocida (igual probabilidad, proporcional al tamaño, etc.) para que formen parte de la muestra. --></p>
 <!-- - Ejemplo: una manzana es un grupo de viviendas que están juntas geográficamente. -->
 <!-- de unidades que (como manzanas) (que ya están juntas en el territorio) -->
 <!-- Primero dividimos la población en grupos (estratos) y luego seleccionamos zonas específicas (conglomerados). -->
+<!-- Considerar, ante posibles preguntas, aunque es una propiedad teórica de los conglomerados (elementos heterogéneos de la población), a veces en el terreno esto no se cumple.  -->
 </section>
 <section id="muestreo-complejo-estratos-conglomerados-y-upm-22" class="slide level2">
 <h2><span class="big-par">Muestreo Complejo | Estratos, conglomerados y UPM (2/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>En el caso del INE, la UPM puede estar compuesta por al menos una manzana REVISAR!!</p></li>
-<li class="fragment"><p>Esta abarca aproximadamente 200 viviendas</p></li>
+<li class="fragment"><p>En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas, mas pequeña que una manzana, etc.</p></li>
+<li class="fragment"><p>Esta abarca aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.</p></li>
 </ul>
 </div>
 <div class="fragment">
@@ -566,11 +577,11 @@
 <section id="factores-de-expansión-13" class="slide level2">
 <h2><span class="big-par">Factores de expansión (1/3)</span></h2>
 <!-- ahora que hemos visto las componentes principales del diseño muestral -->
-<p><span class="center">¿Cómo pasamos de la muestra a la población? 🤔</span></p>
+<p><span class="center">¿Cómo inferimos desde la muestra a la población? 🤔</span></p>
 <div class="fragment">
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Cada unidad de la muestra representa a muchas otras de la población que no fueron seleccionadas.</p></li>
+<li class="fragment"><p>Cada unidad de la muestra se representa a ella misma y a muchas otras de la población objetivo que no fueron seleccionadas.</p></li>
 <li class="fragment"><p>El factor de expansión indica cuántas unidades representa cada caso en la muestra.</p></li>
 <li class="fragment"><p>Se calcula como el inverso de la probabilidad de selección:</p>
 <p><span class="math display">\[\text{Factor expansión} = 1/\pi_i\]</span></p></li>
@@ -588,7 +599,7 @@
 <li class="fragment">En un diseño estratificado bietápico, la probabilidad de selección se construye como la multiplicación de probabilidades <span class="math display">\[\pi_i = \pi_\text{upm}* \pi_\text{vivienda|upm}\]</span></li>
 <li class="fragment">Por ejemplo, supongamos que en el estrato ‘A’ hay 1000 UPM y se seleccionan 100: <span class="math display">\[\pi_\text{upm} = 100/1000 = 0.1\]</span></li>
 <li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 30/200 = 0.6\]</span></li>
-<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.2) = 300 \]</span></li>
+<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.3) = 300 \]</span></li>
 <li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población</li>
 </ul>
 </div>
@@ -599,7 +610,8 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>En la práctica es un poco más complejo, los factores de expansión no se usan tal como salen del diseño 😕</p></li>
-<li class="fragment"><p>Se realizan diferentes ajustes para asegurar la calidad de la estimación:</p>
+<li class="fragment"><p>Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra</p></li>
+<li class="fragment"><p>Los principales ajustes son:</p>
 <ul>
 <li class="fragment">Ajuste por no respuesta</li>
 <li class="fragment">Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por edad, sexo, región etc)</li>
@@ -607,7 +619,7 @@
 </ul></li>
 </ul>
 </div>
-<p><!-- - Ajuste por no respuesta: redistribución del peso de viviendas que no respondieron --></p>
+<!-- - Ajuste por no respuesta: redistribución del peso de viviendas que no respondieron -->
 <!-- Los factores de expansión permiten proyectar los resultados de la muestra a la población total. -->
 <!-- Y los ajustes posteriores garantizan que las estimaciones sean más precisas y realistas -->
 <!-- Entonces, una vez que tenemos calculados y ajustados los factores de expansión, ya podemos estimar totales, proporciones y promedios a partir de la muestra. -->
@@ -630,8 +642,21 @@
 <!-- La calidad estadística nos da las herramientas para hacerlo. -->
 <!-- Y para evaluar esa calidad, el primer paso es entender los tipos de errores que pueden afectar nuestras estimaciones -->
 </section>
-<section id="calidad-estadística-tipos-de-errores" class="slide level2">
-<h2><span class="big-par">Calidad estadística | Tipos de errores</span></h2>
+<section id="calidad-estadística-tipos-de-errores-12" class="slide level2">
+<h2><span class="big-par">Calidad estadística | Tipos de errores (1/2)</span></h2>
+<div class="incremental-par medium-par">
+<ul>
+<li><p>Buscamos estimaciones que sean precisas e insesgadas</p>
+<p><br></p>
+<p><span class="center"><img src="imagenes/plots/sesgo3.png" width="90%"></span></p></li>
+</ul>
+</div>
+<!-- Una estimación precisa no siempre es buena si está lejos del valor real. -->
+<!-- Y una estimación insesgada no es útil si varía demasiado entre muestras. -->
+<!-- Por eso necesitamos tanto la precisión como la validez en nuestras estimaciones. -->
+</section>
+<section id="calidad-estadística-tipos-de-errores-22" class="slide level2">
+<h2><span class="big-par">Calidad estadística | Tipos de errores (2/2)</span></h2>
 <div class="medium-par">
 <!-- La calidad estadística no solo se ve afectada por el hecho de trabajar con una muestra, sino también por todo lo que pasa antes, durante y después del levantamiento de datos. -->
 <!-- Por eso es tan importante distinguir entre errores de muestreo, que podemos cuantificar, y errores no muestrales, que muchas veces son invisibles pero igual de importantes. -->
@@ -678,19 +703,6 @@
 <!-- selección de la persona informante según el tamaño del hogar) y los que se llevan a cabo para eliminar -->
 <!-- las diferencias entre los resultados de la estimación muestral y las estadísticas oficiales disponibles. -->
 <!-- Nos enfocaremos en el error de muestreo, que es lo que podemos medir -->
-</section>
-<section id="calidad-estadística-varianza-error-estándar-y-cv-14" class="slide level2">
-<h2><span class="big-par">Calidad estadística | Varianza, error estándar y CV (1/4)</span></h2>
-<div class="incremental-par medium-par">
-<ul>
-<li><p>Buscamos estimaciones que sean precisas e insesgadas</p>
-<p><br></p>
-<p><span class="center"><img src="imagenes/plots/sesgo3.png" width="90%"></span></p></li>
-</ul>
-</div>
-<!-- Una estimación precisa no siempre es buena si está lejos del valor real. -->
-<!-- Y una estimación insesgada no es útil si varía demasiado entre muestras. -->
-<!-- Por eso necesitamos tanto la precisión como la validez en nuestras estimaciones. -->
 </section>
 <section id="calidad-estadística-varianza-error-estándar-y-cv-24" class="slide level2">
 <h2><span class="big-par">Calidad estadística | Varianza, error estándar y CV (2/4)</span></h2>
