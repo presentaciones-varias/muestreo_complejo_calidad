@@ -426,7 +426,7 @@
 <ul>
 <li>Tipos de errores</li>
 <li>Varianza, error estándar y CV</li>
-<li>Estándares de calidad INE, ONE y CEPAL</li>
+<li>Estándares de calidad INE y CEPAL</li>
 </ul></li>
 <li><p>Paquete calidad</p>
 <ul>
@@ -437,7 +437,7 @@
 </section>
 <section id="introducción" class="slide level2">
 <h2><span class="big-par">Introducción</span></h2>
-<p>¿Cual es el problema con el muestreo aleatorio simple?</p>
+<p>¿Cuál es el problema con el muestreo aleatorio simple?</p>
 <div class="fragment">
 <div class="medium-par">
 <ul>
@@ -466,7 +466,12 @@
 <li class="fragment">Diseños multietápicos</li>
 <li class="fragment">Seleccion sistemática, entre otros.</li>
 </ul></li>
-<li class="fragment"><p>Esto ayuda a reducir costos y obtener muestras representativas de la realidad, garantizando presencia y, en algunos casos, representatividad de subgrupos de interés.</p></li>
+<li class="fragment"><p>Esto ayuda a:</p>
+<ul>
+<li class="fragment">✅Reducir costos</li>
+<li class="fragment">✅Obtener muestras representativas de la realidad</li>
+<li class="fragment">✅Garantizar presencia y, en algunos casos, representatividad de subgrupos de interés</li>
+</ul></li>
 <li class="fragment"><p>Pero para aplicar cualquiera de estas técnicas, se requiere contar con listados de unidades organizadas según ciertos atributos.</p></li>
 </ul>
 </div>
@@ -478,17 +483,15 @@
 <h2><span class="big-par">Muestreo complejo | Marco Muestral de Viviendas (1/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.</p></li>
-<li class="fragment"><p>De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.</p></li>
-<li class="fragment"><p>En encuestas de hogares, se utiliza el <em>Marco Muestral de Viviendas</em> (MMV)</p></li>
-</ul>
-<!-- - El Marco Muestral de Viviendas (MMV) es una herramienta que nos permite aplicar diseños probabilísticos de forma eficiente y con cobertura nacional. -->
-<ul>
+<li class="fragment"><p>Un <em>marco muestral maestro</em> es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.</p></li>
+<li class="fragment"><p>De acuerdo con las recomendaciones de Naciones Unidas (2009):</p>
+<blockquote>
+<p>Se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.</p>
+</blockquote></li>
+<li class="fragment"><p>En encuestas de hogares, se utiliza el <strong>Marco Muestral de Viviendas</strong> (MMV)</p></li>
 <li class="fragment"><p>Se basa principalmente en el Censo de población y vivienda, y se va actualizando con datos administrativos e información recolectada en terreno 📝</p></li>
-<li class="fragment"><p>Tiene una cobertura de las 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena perteneciente a la Región de Magallanes).</p></li>
 </ul>
 </div>
-<!-- “El Marco Muestral de Viviendas (MMV)”  ->  “Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permiten seleccionar muestras probabilísticas a lo largo del período intercensal. De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal”  -->
 <!-- -También se identifican zonas de exclusión que no pertenecen a la población objetivo.  -->
 </section>
 <section id="muestreo-complejo-marco-muestral-de-viviendas-22" class="slide level2">
@@ -496,8 +499,9 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>El MMV organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.</p></li>
+<li class="fragment"><p>Tiene una cobertura de 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena).</p></li>
 <li class="fragment"><p>Cuenta con una estratificación socioeconómica que se basa en un análisis de diversas variables recopiladas en el Censo 2017 y se realiza a nivel de UPM.</p>
-<p><span class="center"><img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="35%"></span></p></li>
+<p><span class="center"><img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="28%"></span></p></li>
 </ul>
 </div>
 <!-- - entonces el mmv nos entrega una base completa y organizada de todas las viviendas del país -->
@@ -515,14 +519,11 @@
 <li class="fragment">División de la población en grupos (estratos) homogéneos mutuamente excluyentes.</li>
 <li class="fragment">Esto permite garantizar presencia de todos los subgrupos relevantes (como zonas urbanas/rurales, regiones o niveles socioeconómicos).</li>
 </ul></li>
-</ul>
-<!-- - Por ejemplo realizar una división por zona geográfica o nivel socioeconómico -->
-<ul>
-<li class="fragment"><strong>Conglomeración</strong>:
+<li class="fragment"><p><strong>Conglomeración</strong>:</p>
 <ul>
 <li class="fragment">Conjunto de unidades heterogéneas principalmente con relación a alguna variable de interés, representativos de toda la población en su conjunto.</li>
 <li class="fragment">Desde esos grupos se seleccionan algunos con una probabilidad conocida.</li>
-<li class="fragment">El primer grupo de selección es conocido como UPM MODIFICAR!!!</li>
+<li class="fragment">Las UPMs (Unidades Primarias de Muestreo) corresponden a los conglomerados de la primera etapa de selección</li>
 </ul></li>
 </ul>
 </div>
@@ -532,36 +533,34 @@
 <!-- Primero dividimos la población en grupos (estratos) y luego seleccionamos zonas específicas (conglomerados). -->
 <!-- Considerar, ante posibles preguntas, aunque es una propiedad teórica de los conglomerados (elementos heterogéneos de la población), a veces en el terreno esto no se cumple.  -->
 </section>
-<section id="muestreo-complejo-estratos-conglomerados-y-upm-22" class="slide level2">
-<h2><span class="big-par">Muestreo Complejo | Estratos, conglomerados y UPM (2/2)</span></h2>
+<section id="muestreo-complejo-estratos-y-conglomerados-22" class="slide level2">
+<h2><span class="big-par">Muestreo Complejo | Estratos y conglomerados (2/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas, mas pequeña que una manzana, etc.</p></li>
-<li class="fragment"><p>Esta abarca aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.</p></li>
+<li class="fragment"><p>En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas etc.</p></li>
+<li class="fragment"><p>Estas abarcan aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.</p></li>
 </ul>
 </div>
 <div class="fragment">
-<p><span class="center"><img src="imagenes/plots/UPM.JPG" width="55%"></span></p>
+<p><span class="center"><img src="imagenes/plots/UPM.JPG" width="50%"></span></p>
 </div>
 </section>
 <section id="muestreo-complejo-diseño-ii-enut-12" class="slide level2">
 <h2><span class="big-par">Muestreo complejo | Diseño II ENUT (1/2)</span></h2>
-<p>INCOMPLETO</p>
 <div class="medium-par">
 <p><span class="center"><img src="imagenes/plots/logo_enut.png" width="30%"></span></p>
 <ul>
-<li class="fragment"><p>El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.</p></li>
-<li class="fragment"><p>Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa (UPM) de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen.</p></li>
+<li class="fragment"><p>El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.</p>
+<ul>
+<li class="fragment"><p>Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa, <em>UPM</em>, de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen.</p></li>
+<li class="fragment"><p>En la segunda etapa se selecciona la <em>Unidad Secundaria de Muestreo</em> (viviendas), la cual tiene igual probabilidad de selección al interior de cada UPM.</p></li>
+</ul></li>
 </ul>
 <!-- - En la primera etapa, se selecciona UPM a partir de un muestreo sistemático con probabilidad proporcional al tamaño de la UPM. -->
-<ul>
-<li class="fragment">En la segunda etapa se selecciona la Unidad Secundaria de Muestreo (USM), la cual tiene igual probabilidad de selección al interior de cada UPM (viviendas)</li>
-</ul>
 </div>
 </section>
-<section id="muestreo-complejo-diseño-ii-enut-12-1" class="slide level2">
-<h2><span class="big-par">Muestreo complejo | Diseño II ENUT (1/2)</span></h2>
-<p>INCOMPLETO</p>
+<section id="muestreo-complejo-diseño-ii-enut-22" class="slide level2">
+<h2><span class="big-par">Muestreo complejo | Diseño II ENUT (2/2)</span></h2>
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país</p></li>
@@ -597,7 +596,7 @@
 <li class="fragment">Por ejemplo, supongamos que en el estrato ‘A’ hay 1000 UPM y se seleccionan 100: <span class="math display">\[\pi_\text{upm} = 100/1000 = 0.1\]</span></li>
 <li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 60/200 = 0.3\]</span></li>
 <li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.3) = 300 \]</span></li>
-<li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población</li>
+<li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en el estrato ‘A’, representa a 300 viviendas similares de la población.</li>
 </ul>
 </div>
 <!-- En un diseño estratificado bietápico, cada vivienda seleccionada en la muestra tiene asignado un factor de expansión. Este valor refleja cuántas viviendas representa en su estrato, considerando tanto la probabilidad de que se eligiera su UPM como la de que ella misma fuera seleccionada dentro de esa UPM. -->
@@ -607,8 +606,8 @@
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>En la práctica es un poco más complejo, los factores de expansión no se usan tal como salen del diseño 😕</p></li>
-<li class="fragment"><p>Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra</p></li>
-<li class="fragment"><p>Los principales ajustes son:</p>
+<li class="fragment"><p>Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra.</p></li>
+<li class="fragment"><p>Algunos de ellos son:</p>
 <ul>
 <li class="fragment">Ajuste por no respuesta</li>
 <li class="fragment">Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por edad, sexo, región etc)</li>
@@ -661,7 +660,7 @@
 <li class="fragment"><p><strong>Error de muestreo</strong></p>
 <ul>
 <li class="fragment">Se produce por el diseño de muestra</li>
-<li class="fragment">Se puede medir con varianza, error estándar, CV</li>
+<li class="fragment">Se puede medir con varianza, error estándar y CV</li>
 </ul></li>
 <li class="fragment"><p><strong>Errores no muestrales</strong></p>
 <ul>
@@ -713,8 +712,7 @@
 </ul>
 </div>
 <div class="fragment">
-<p><br></p>
-<p><span class="medium-par">*: La estimación de la varianza en diseños complejos no es trivial ⚠️</span></p>
+<p><span class="medium-par">*: La estimación de la varianza en diseños complejos no es trivial ⚠️.</span></p>
 <p><span class="medium-par">Se utilizan diferentes metodologías para estimarla; aproximaciones mediante linealización de Taylor, pesos replicados, métodos del último conglomerado entre otros)</span></p>
 <!-- si si muy lindo en cv para la precision, pero veamos lo que hace con las proporciones jdjdj -->
 <!-- ## [Calidad estadística | Varianza, error estándar y CV (4/)]{.big-par} -->
@@ -805,7 +803,7 @@
 </ul></li>
 <li class="fragment"><p>Realizar la evaluación de la estimación (<em>función assess()</em>)</p>
 <ul>
-<li class="fragment">Actualmente, están disponibles las metodologías de INE y CEPAL: <em>chile</em>, <em>eclac_2020</em>, <em>eclac_2023</em> y <strong>chile_economics</strong></li>
+<li class="fragment">Actualmente, están disponibles las metodologías de INE y CEPAL: <em>chile</em>, <em>eclac_2020</em>, <em>eclac_2023</em> y <em>chile_economics</em></li>
 </ul></li>
 </ol></li>
 <li class="fragment"><p>⚠️ Para poder utilizar el paquete <em>calidad</em>, es necesario definir el diseño de muestra de nuestros datos.</p></li>
@@ -829,19 +827,19 @@
 </ul>
 </div>
 </section>
-<section id="paquete-calidad-función-assess" class="slide level2 scrollable">
+<section id="paquete-calidad-función-assess" class="slide level2">
 <h2><span class="big-par">Paquete calidad | Función assess</span></h2>
 <div class="medium-par">
 <ul>
 <li class="fragment"><p>Función <em>assess()</em>: evaluación del estándar</p>
 <ul>
 <li class="fragment"><p>Parámetros principales:</p>
-<ol type="1">
+<ul>
 <li class="fragment"><p><em>table</em>: Tabla con las estimaciones generadas con funciones <em>create_…()</em>.</p></li>
 <li class="fragment"><p><em>scheme</em>: String que indica el estándar a evaluar, este puede ser “chile”, “eclac_2020”, “eclac_2023” y “chile_economics”.</p></li>
 <li class="fragment"><p><em>publish</em>: Booleano, <em>TRUE</em> evalúa el porcentaje de estimaciones fiables en el tabulado completo. Default <em>FALSE</em>.</p></li>
 <li class="fragment"><p><em>ratio_between_0_1</em>: Booleano, <em>TRUE</em> indica que la estimación corresponde a una proporción o razón entre 0 y 1. Por defecto es <strong>TRUE</strong> y se evalúa solo cuando tenemos una clase proporción (estimación con <em>create_prop</em>).</p></li>
-</ol></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -1180,15 +1178,15 @@
 </section>
 <section id="para-finalizar" class="slide level2">
 <h2>Para finalizar</h2>
-<p>INCOMPLETO</p>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Para mayor información sobre el uso del paquete, están disponibles los tutoriales en la pag del INE <a href="https://www.ine.gob.cl/calidad-estadistica/directrices-metodologicas/tutorial-paquete-calidad">link</a> y en cran <a href="https://cran.r-project.org/web/packages/calidad/vignettes/tutorial.html">link</a></p></li>
-<li class="fragment"><p>Si alguien está interesado/a en colaborar en la creación de nuevas funcionalidades, puede realizarlo a través de la página github.com/inesscc/calidad 💻🛠️</p></li>
+<li class="fragment"><p>Para mayor información sobre el uso del paquete, están disponibles los tutoriales en el sitio web del INE <a href="https://www.ine.gob.cl/calidad-estadistica/directrices-metodologicas/tutorial-paquete-calidad">link</a> y en cran <a href="https://cran.r-project.org/web/packages/calidad/vignettes/tutorial.html">link</a></p>
+<p><span class="center"><img src="imagenes/plots/pag_tutorial.png" width="65%"></span></p></li>
+<li class="fragment"><p>Si alguien está interesado/a en colaborar en la creación de nuevas funcionalidades, puede realizarlo a través de la página <em>github.com/inesscc/calidad</em> 💻🛠️</p></li>
 </ul>
 </div>
 <div class="fragment">
-<p><span class="center">¡Muchas gracias!</span></p>
+<p><span class="center">¡Muchas gracias!😊</span></p>
 </div>
 </section></section>
 <section id="section-1" class="title-slide slide level1 center">

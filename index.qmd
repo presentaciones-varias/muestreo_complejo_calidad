@@ -60,7 +60,7 @@ knitr:
 - Calidad estadística
     - Tipos de errores
     - Varianza, error estándar y CV 
-    - Estándares de calidad INE, ONE y CEPAL
+    - Estándares de calidad INE y CEPAL
  
 - Paquete calidad
     - Historia, funcionalidades y aplicación
@@ -69,7 +69,7 @@ knitr:
 
 ## [Introducción]{.big-par}
 
-¿Cual es el problema con el muestreo aleatorio simple? 
+¿Cuál es el problema con el muestreo aleatorio simple? 
 
 . . .
 
@@ -105,7 +105,10 @@ knitr:
     - Seleccion sistemática, entre otros.
 
 
-- Esto ayuda a reducir costos y obtener muestras representativas de la realidad, garantizando presencia y, en algunos casos, representatividad de subgrupos de interés.
+- Esto ayuda a:  
+  - ✅Reducir costos 
+  - ✅Obtener muestras representativas de la realidad
+  - ✅Garantizar presencia y, en algunos casos, representatividad de subgrupos de interés
 
 - Pero para aplicar cualquiera de estas técnicas, se requiere contar con listados de unidades organizadas según ciertos atributos.
 
@@ -124,22 +127,18 @@ knitr:
 
 :::{.incremental .medium-par}
 
-- Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.
+- Un *marco muestral maestro* es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.
 
-- De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.
+- De acuerdo con las recomendaciones de Naciones Unidas (2009):
+    
+    > Se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.
 
-- En encuestas de hogares, se utiliza el *Marco Muestral de Viviendas* (MMV)
-
-<!-- - El Marco Muestral de Viviendas (MMV) es una herramienta que nos permite aplicar diseños probabilísticos de forma eficiente y con cobertura nacional. -->
+- En encuestas de hogares, se utiliza el **Marco Muestral de Viviendas** (MMV)
 
 - Se basa principalmente en el Censo de población y vivienda, y se va actualizando con datos administrativos e información recolectada en terreno 📝
 
-- Tiene una cobertura de las 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena perteneciente a la Región de Magallanes).
-
 :::
 
-
-<!-- “El Marco Muestral de Viviendas (MMV)”  ->  “Un marco muestral maestro es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permiten seleccionar muestras probabilísticas a lo largo del período intercensal. De acuerdo con las recomendaciones de Naciones Unidas (2009), se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal”  -->
 
 <!-- -También se identifican zonas de exclusión que no pertenecen a la población objetivo.  -->
 
@@ -149,9 +148,11 @@ knitr:
 
 - El MMV organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.
 
+- Tiene una cobertura de 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena).
+
 - Cuenta con una estratificación socioeconómica que se basa en un análisis de diversas variables recopiladas en el Censo 2017 y se realiza a nivel de UPM.
 
-     [<img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="35%"/>]{.center}
+     [<img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="28%"/>]{.center}
 :::
 
 
@@ -172,14 +173,11 @@ knitr:
   
   - División de la población en grupos (estratos) homogéneos mutuamente excluyentes.
   - Esto permite garantizar presencia de todos los subgrupos relevantes (como zonas urbanas/rurales, regiones o niveles socioeconómicos).
-  
-<!-- - Por ejemplo realizar una división por zona geográfica o nivel socioeconómico -->
-
 
 - **Conglomeración**:
   - Conjunto de unidades heterogéneas principalmente con relación a alguna variable de interés, representativos de toda la población en su conjunto.
   - Desde esos grupos se seleccionan algunos con una probabilidad conocida.
-  - El primer grupo de selección es conocido como UPM  MODIFICAR!!!
+  - Las UPMs (Unidades Primarias de Muestreo) corresponden a los conglomerados de la primera etapa de selección
   
 :::
 
@@ -193,27 +191,25 @@ knitr:
 
 <!-- Considerar, ante posibles preguntas, aunque es una propiedad teórica de los conglomerados (elementos heterogéneos de la población), a veces en el terreno esto no se cumple.  -->
 
-## [Muestreo Complejo | Estratos, conglomerados y UPM (2/2)]{.big-par}
+## [Muestreo Complejo | Estratos y conglomerados (2/2)]{.big-par}
 
 :::{.incremental .medium-par}
 
-- En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas, mas pequeña que una manzana, etc.
+- En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas etc.
 
 
-- Esta abarca aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.
+- Estas abarcan aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.
 
 :::
 
 . . .
 
-[<img src="imagenes/plots/UPM.JPG" width="55%"/>]{.center}
+[<img src="imagenes/plots/UPM.JPG" width="50%"/>]{.center}
 
 . . .
 
 
 ## [Muestreo complejo | Diseño II ENUT (1/2)]{.big-par}
-
-INCOMPLETO
 
 :::{.incremental .medium-par}
 
@@ -221,18 +217,17 @@ INCOMPLETO
 
 - El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.
 
-- Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa (UPM) de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen. 
+  - Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa, *UPM*, de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen. 
+  
+  - En la segunda etapa se selecciona la *Unidad Secundaria de Muestreo* (viviendas), la cual tiene igual probabilidad de selección al interior de cada UPM.
 
 <!-- - En la primera etapa, se selecciona UPM a partir de un muestreo sistemático con probabilidad proporcional al tamaño de la UPM. -->
-
-- En la segunda etapa se selecciona la Unidad Secundaria de Muestreo (USM), la cual tiene igual probabilidad de selección al interior de cada UPM (viviendas)
 
 :::
 
 
 
-## [Muestreo complejo | Diseño II ENUT (1/2)]{.big-par}
-INCOMPLETO
+## [Muestreo complejo | Diseño II ENUT (2/2)]{.big-par}
 
 :::{.incremental .medium-par}
 - La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país
@@ -286,7 +281,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
     $$\pi_\text{vivienda|upm}= 60/200 = 0.3$$
 - Así, el factor de expansión teórico nos queda como: 
     $$\text{Factor expansión} = 1/(0.1*0.3) = 300 $$
-- Cada una de las viviendas seleccionadas dentro de la UPM en ese estrato, representa a 300 viviendas similares de la población 
+- Cada una de las viviendas seleccionadas dentro de la UPM en el estrato 'A', representa a 300 viviendas similares de la población.
 
 :::
 
@@ -298,8 +293,8 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 :::{.incremental .medium-par}
 
 - En la práctica es un poco más complejo, los factores de expansión no se usan tal como salen del diseño 😕
-- Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra
-- Los principales ajustes son:
+- Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra.
+- Algunos de ellos son:
   
   - Ajuste por no respuesta
   - Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por edad, sexo, región etc)
@@ -364,7 +359,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 - **Error de muestreo**
 
   - Se produce por el diseño de muestra
-  - Se puede medir con varianza, error estándar, CV 
+  - Se puede medir con varianza, error estándar y CV 
 
 - **Errores no muestrales**
 
@@ -430,11 +425,9 @@ La varianza, el error estándar y el CV nos ayudan a identificar qué tan buenos
 
 . . .
 
-<br>
+[*: La estimación de la varianza en diseños complejos no es trivial ⚠️. ]{.medium-par}
 
-[*: La estimación de la varianza en diseños complejos no es trivial ⚠️]{.medium-par}
-
-[   Se utilizan diferentes metodologías para estimarla; aproximaciones mediante linealización de Taylor, pesos replicados, métodos del último conglomerado entre otros)]{.medium-par}
+[Se utilizan diferentes metodologías para estimarla; aproximaciones mediante linealización de Taylor, pesos replicados, métodos del último conglomerado entre otros)]{.medium-par}
 
 <!-- si si muy lindo en cv para la precision, pero veamos lo que hace con las proporciones jdjdj -->
 
@@ -552,7 +545,7 @@ Estándar de encuestas de hogares:
    
   2. Realizar la evaluación de la estimación (*función assess()*)
     
-      - Actualmente, están disponibles las metodologías de INE y CEPAL: *chile*, *eclac_2020*, *eclac_2023* y **chile_economics** 
+      - Actualmente, están disponibles las metodologías de INE y CEPAL: *chile*, *eclac_2020*, *eclac_2023* y *chile_economics* 
   
 - ⚠️ Para poder utilizar el paquete *calidad*, es necesario definir el diseño de muestra de nuestros datos.
 
@@ -587,13 +580,13 @@ Estándar de encuestas de hogares:
 
   - Parámetros principales:
     
-    1. *table*: Tabla con las estimaciones generadas con funciones *create_...()*.
+    - *table*: Tabla con las estimaciones generadas con funciones *create_...()*.
     
-    2. *scheme*: String que indica el estándar a evaluar, este puede ser "chile", "eclac_2020", "eclac_2023" y "chile_economics".
+    - *scheme*: String que indica el estándar a evaluar, este puede ser "chile", "eclac_2020", "eclac_2023" y "chile_economics".
     
-    3. *publish*: Booleano, *TRUE* evalúa el porcentaje de estimaciones fiables en el tabulado completo. Default *FALSE*.
+    - *publish*: Booleano, *TRUE* evalúa el porcentaje de estimaciones fiables en el tabulado completo. Default *FALSE*.
     
-    4. *ratio_between_0_1*: Booleano, *TRUE* indica que la estimación corresponde a una proporción o razón entre 0 y 1. Por defecto es **TRUE** y se evalúa solo cuando tenemos una clase proporción (estimación con *create_prop*).
+    - *ratio_between_0_1*: Booleano, *TRUE* indica que la estimación corresponde a una proporción o razón entre 0 y 1. Por defecto es **TRUE** y se evalúa solo cuando tenemos una clase proporción (estimación con *create_prop*).
     
 :::
 
@@ -614,11 +607,11 @@ Cargamos el paquete
 
 :::{.big-par}
 ```{r eval=FALSE, echo =TRUE}
-### instalar paquete calidad ###
-## desde cran:
+## instalar paquete calidad
+### desde cran:
 install.packages('calidad')
 
-## desde github:
+### desde github:
 # install.packages('devtools')
 # devtools::install_github("inesscc/calidad")
 
@@ -701,10 +694,8 @@ Evaluamos la calidad de la estimación:
 
 ```{r echo = TRUE}
 
-
 assess(est_tiempo_tnr,               # estimacion con funcion create
        scheme = 'chile')             # indicamos criterio, chile := estandar de encuestas de hogares
-
 
 ```
 
@@ -760,20 +751,20 @@ assess(est_tiempo_tnr,
 
 ## Para finalizar
 
-INCOMPLETO
-
 ::: {.medium-par .incremental}
 
-- Para mayor información sobre el uso del paquete, están disponibles los tutoriales en la pag del INE [link](https://www.ine.gob.cl/calidad-estadistica/directrices-metodologicas/tutorial-paquete-calidad) y en cran [link](https://cran.r-project.org/web/packages/calidad/vignettes/tutorial.html)
+- Para mayor información sobre el uso del paquete, están disponibles los tutoriales en el sitio web del INE [link](https://www.ine.gob.cl/calidad-estadistica/directrices-metodologicas/tutorial-paquete-calidad) y en cran [link](https://cran.r-project.org/web/packages/calidad/vignettes/tutorial.html)
+  
+  [<img src="imagenes/plots/pag_tutorial.png" width="65%"/>]{.center}
 
-- Si alguien está interesado/a en colaborar en la creación de nuevas funcionalidades, puede realizarlo a través de la página github.com/inesscc/calidad 💻🛠️
+- Si alguien está interesado/a en colaborar en la creación de nuevas funcionalidades, puede realizarlo a través de la página *github.com/inesscc/calidad* 💻🛠️
 
 
 :::
 
 . . .
 
-[¡Muchas gracias!]{.center}
+[¡Muchas gracias!😊]{.center}
 
 #
 
