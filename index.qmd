@@ -125,17 +125,24 @@ knitr:
 ## [Muestreo complejo | Marco Muestral de Viviendas (1/2)]{.big-par}
 
 
+<!-- - Un *marco muestral maestro* es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas. -->
+
 :::{.incremental .medium-par}
 
-- Un *marco muestral maestro* es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.
+- ¿Qué es un Marco Muestral Maestro?
+  - Es una base organizada de unidades geográficas que cubre todo el territorio nacional.
+  - Permite seleccionar muestras probabilísticas.
 
-- De acuerdo con las recomendaciones de Naciones Unidas (2009):
+- De acuerdo con las Naciones Unidas (2009) 📖:
     
-    > Se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.
+    > Es una estrucutra completa, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.
 
-- En encuestas de hogares, se utiliza el **Marco Muestral de Viviendas** (MMV)
+  <br>
 
-- Se basa principalmente en el Censo de población y vivienda, y se va actualizando con datos administrativos e información recolectada en terreno 📝
+- Para encuestas de hogares, se utiliza el **Marco Muestral de Viviendas** (MMV)
+
+  - Basado en el Censo de población y vivienda️ 🏠📋
+  - Se va actualizando con datos administrativos e información recolectada en terreno 📝
 
 :::
 
@@ -146,7 +153,7 @@ knitr:
 
 :::{.incremental .medium-par}
 
-- El MMV organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.
+- El **MMV** organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.
 
 - Tiene una cobertura de 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena).
 
@@ -215,11 +222,14 @@ knitr:
 
 [<img src="imagenes/plots/logo_enut.png" width="30%"/>]{.center}
 
-- El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.
+- El diseño muestral de la II ENUT corresponde a una muestra **probabilística, estratificada y bietápica**.
 
-  - Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa, *UPM*, de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen. 
-  
-  - En la segunda etapa se selecciona la *Unidad Secundaria de Muestreo* (viviendas), la cual tiene igual probabilidad de selección al interior de cada UPM.
+  - Los *estratos* se definen principalmente por comuna, incorporando características geográficas y socioeconómicas.
+
+  - Dentro de cada estrato:
+    - Se seleccionan las **UPM** mediante un procedimiento aleatorio sistemático, con probabilidad proporcional al tamaño, según el número de viviendas que contiene cada UPM.
+    
+    - En la segunda etapa, se seleccionan las **viviendas** (Unidad Secundaria de Muestreo) con igual probabilidad dentro de cada UPM.
 
 <!-- - En la primera etapa, se selecciona UPM a partir de un muestreo sistemático con probabilidad proporcional al tamaño de la UPM. -->
 
@@ -280,8 +290,8 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 - Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60:
     $$\pi_\text{vivienda|upm}= 60/200 = 0.3$$
 - Así, el factor de expansión teórico nos queda como: 
-    $$\text{Factor expansión} = 1/(0.1*0.3) = 300 $$
-- Cada una de las viviendas seleccionadas dentro de la UPM en el estrato 'A', representa a 300 viviendas similares de la población.
+    $$\text{Factor expansión} = 1/(0.1*0.3) = 33.\overline{3} $$
+- Cada una de las viviendas seleccionadas dentro de la UPM en el estrato 'A', representa a 33 viviendas similares de la población.
 
 :::
 

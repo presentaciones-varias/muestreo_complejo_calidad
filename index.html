@@ -481,15 +481,24 @@
 </section>
 <section id="muestreo-complejo-marco-muestral-de-viviendas-12" class="slide level2">
 <h2><span class="big-par">Muestreo complejo | Marco Muestral de Viviendas (1/2)</span></h2>
+<!-- - Un *marco muestral maestro* es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas. -->
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>Un <em>marco muestral maestro</em> es una estructura metodológica diseñada para cubrir completamente el territorio nacional mediante unidades geográficas organizadas, que permite seleccionar muestras probabilísticas.</p></li>
-<li class="fragment"><p>De acuerdo con las recomendaciones de Naciones Unidas (2009):</p>
+<li class="fragment"><p>¿Qué es un Marco Muestral Maestro?</p>
+<ul>
+<li class="fragment">Es una base organizada de unidades geográficas que cubre todo el territorio nacional.</li>
+<li class="fragment">Permite seleccionar muestras probabilísticas.</li>
+</ul></li>
+<li class="fragment"><p>De acuerdo con las Naciones Unidas (2009) 📖:</p>
 <blockquote>
-<p>Se concibe como una base común, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.</p>
-</blockquote></li>
-<li class="fragment"><p>En encuestas de hogares, se utiliza el <strong>Marco Muestral de Viviendas</strong> (MMV)</p></li>
-<li class="fragment"><p>Se basa principalmente en el Censo de población y vivienda, y se va actualizando con datos administrativos e información recolectada en terreno 📝</p></li>
+<p>Es una estrucutra completa, estable y coherente para múltiples encuestas o rondas repetidas de una misma operación estadística, garantizando trazabilidad y consistencia temporal.</p>
+</blockquote>
+<p><br></p></li>
+<li class="fragment"><p>Para encuestas de hogares, se utiliza el <strong>Marco Muestral de Viviendas</strong> (MMV)</p>
+<ul>
+<li class="fragment">Basado en el Censo de población y vivienda️ 🏠📋</li>
+<li class="fragment">Se va actualizando con datos administrativos e información recolectada en terreno 📝</li>
+</ul></li>
 </ul>
 </div>
 <!-- -También se identifican zonas de exclusión que no pertenecen a la población objetivo.  -->
@@ -498,7 +507,7 @@
 <h2><span class="big-par">Muestreo complejo | Marco Muestral de Viviendas (2/2)</span></h2>
 <div class="medium-par">
 <ul>
-<li class="fragment"><p>El MMV organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.</p></li>
+<li class="fragment"><p>El <strong>MMV</strong> organiza las viviendas por región, provincia, comuna, zonas urbanas y rurales.</p></li>
 <li class="fragment"><p>Tiene una cobertura de 345 comunas de las 346 que conforman el territorio nacional (se excluye la comuna de la Antártica Chilena).</p></li>
 <li class="fragment"><p>Cuenta con una estratificación socioeconómica que se basa en un análisis de diversas variables recopiladas en el Censo 2017 y se realiza a nivel de UPM.</p>
 <p><span class="center"><img src="imagenes/plots/estratificacion_socioeconomica.jpg" width="28%"></span></p></li>
@@ -550,10 +559,14 @@
 <div class="medium-par">
 <p><span class="center"><img src="imagenes/plots/logo_enut.png" width="30%"></span></p>
 <ul>
-<li class="fragment"><p>El diseño muestral de la II ENUT implica la obtención de una muestra probabilística estratificada y bietápica.</p>
+<li class="fragment"><p>El diseño muestral de la II ENUT corresponde a una muestra <strong>probabilística, estratificada y bietápica</strong>.</p>
 <ul>
-<li class="fragment"><p>Al interior de cada estrato de muestreo (que corresponde a la comuna), son seleccionadas las unidades de primera etapa, <em>UPM</em>, de forma aleatoria, sistemática y con probabilidad proporcional al tamaño, según el número de viviendas que contienen.</p></li>
-<li class="fragment"><p>En la segunda etapa se selecciona la <em>Unidad Secundaria de Muestreo</em> (viviendas), la cual tiene igual probabilidad de selección al interior de cada UPM.</p></li>
+<li class="fragment"><p>Los <em>estratos</em> se definen principalmente por comuna, incorporando características geográficas y socioeconómicas.</p></li>
+<li class="fragment"><p>Dentro de cada estrato:</p>
+<ul>
+<li class="fragment"><p>Se seleccionan las <strong>UPM</strong> mediante un procedimiento aleatorio sistemático, con probabilidad proporcional al tamaño, según el número de viviendas que contiene cada UPM.</p></li>
+<li class="fragment"><p>En la segunda etapa, se seleccionan las <strong>viviendas</strong> (Unidad Secundaria de Muestreo) con igual probabilidad dentro de cada UPM.</p></li>
+</ul></li>
 </ul></li>
 </ul>
 <!-- - En la primera etapa, se selecciona UPM a partir de un muestreo sistemático con probabilidad proporcional al tamaño de la UPM. -->
@@ -595,8 +608,8 @@
 <li class="fragment">En un diseño estratificado bietápico, la probabilidad de seleccionar una vivienda es el producto de las probabilidades de cada etapa: <span class="math display">\[\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}\]</span></li>
 <li class="fragment">Por ejemplo, supongamos que en el estrato ‘A’ hay 1000 UPM y se seleccionan 100: <span class="math display">\[\pi_\text{upm} = 100/1000 = 0.1\]</span></li>
 <li class="fragment">Supongamos que en cada UPM seleccionada tenemos 200 viviendas, y seleccionamos 60: <span class="math display">\[\pi_\text{vivienda|upm}= 60/200 = 0.3\]</span></li>
-<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.3) = 300 \]</span></li>
-<li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en el estrato ‘A’, representa a 300 viviendas similares de la población.</li>
+<li class="fragment">Así, el factor de expansión teórico nos queda como: <span class="math display">\[\text{Factor expansión} = 1/(0.1*0.3) = 33.\overline{3} \]</span></li>
+<li class="fragment">Cada una de las viviendas seleccionadas dentro de la UPM en el estrato ‘A’, representa a 33 viviendas similares de la población.</li>
 </ul>
 </div>
 <!-- En un diseño estratificado bietápico, cada vivienda seleccionada en la muestra tiene asignado un factor de expansión. Este valor refleja cuántas viviendas representa en su estrato, considerando tanto la probabilidad de que se eligiera su UPM como la de que ella misma fuera seleccionada dentro de esa UPM. -->
@@ -856,11 +869,11 @@
 <p>Cargamos el paquete</p>
 <div class="big-par">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="do">### instalar paquete calidad </span><span class="al">###</span></span>
-<span id="cb1-2"><a href=""></a><span class="do">## desde cran:</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="do">## instalar paquete calidad</span></span>
+<span id="cb1-2"><a href=""></a><span class="do">### desde cran:</span></span>
 <span id="cb1-3"><a href=""></a><span class="fu">install.packages</span>(<span class="st">'calidad'</span>)</span>
 <span id="cb1-4"><a href=""></a></span>
-<span id="cb1-5"><a href=""></a><span class="do">## desde github:</span></span>
+<span id="cb1-5"><a href=""></a><span class="do">### desde github:</span></span>
 <span id="cb1-6"><a href=""></a><span class="co"># install.packages('devtools')</span></span>
 <span id="cb1-7"><a href=""></a><span class="co"># devtools::install_github("inesscc/calidad")</span></span>
 <span id="cb1-8"><a href=""></a></span>
