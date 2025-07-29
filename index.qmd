@@ -296,8 +296,6 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 :::
 
 
-<!-- En un diseño estratificado bietápico, cada vivienda seleccionada en la muestra tiene asignado un factor de expansión. Este valor refleja cuántas viviendas representa en su estrato, considerando tanto la probabilidad de que se eligiera su UPM como la de que ella misma fuera seleccionada dentro de esa UPM. -->
-
 ## [Factores de expansión (3/3)]{.big-par}
 
 :::{.incremental .medium-par}
@@ -307,8 +305,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 - Algunos de ellos son:
   
   - Ajuste por no respuesta
-  - Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por edad, sexo, región etc)
-  - Post-estratificación: se agrupan y ajustan los pesos por combinaciones de variables.
+  - Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por ej: edad, sexo o región)
 
 :::
 
@@ -326,13 +323,14 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 
 - Toda estimación obtenida tiene cierto nivel de incertidumbre
 
-- La calidad estadística nos ayuda a evaluar que tan confiables son los resultados
+- La calidad estadística nos ayuda a evaluar qué tan confiables son los resultados.
 
-- Para ello es importante preguntarnos 
-    - ¿Qué tanto varía la estimación si tomáramos otra muestra? 
+- Para ello es importante preguntarnos:
+    - ¿Qué tanto varía la estimación si tomáramos otra muestra?
     - ¿Qué tan cerca estamos del valor real?
 
-- Realizar estas evaluaciones nos permitirán tomar decisión con evidencia y saber si una estimación es fiable.
+- Evaluar la calidad estadística nos permite tomar decisiones informadas y evitar conclusiones erradas.
+
 :::
 
 <!-- Estimar no basta. También debemos saber cuánto confiar en lo estimado. -->
@@ -346,7 +344,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 
 :::{.incremental-par .medium-par}
 
-- Buscamos estimaciones que sean precisas e insesgadas
+- Buscamos estimaciones que sean precisas (con poca variabilidad) e insesgadas (cercanas al valor real).
   
   <br>
   
