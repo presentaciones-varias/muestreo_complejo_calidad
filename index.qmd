@@ -53,7 +53,7 @@ knitr:
 - Muestreo complejo
     - Marco muestral de viviendas
     - Estratos y conglomerados
-    - Diseño ENUT
+    - Diseño II ENUT
   
 - Factores de Expansión
 
@@ -184,7 +184,7 @@ knitr:
 - **Conglomeración**:
   - Conjunto de unidades heterogéneas principalmente con relación a alguna variable de interés, representativos de toda la población en su conjunto.
   - Desde esos grupos se seleccionan algunos con una probabilidad conocida.
-  - Las UPMs (Unidades Primarias de Muestreo) corresponden a los conglomerados de la primera etapa de selección
+  - Las UPMs (Unidades Primarias de Muestreo) corresponden a los conglomerados de la primera etapa de selección.
   
 :::
 
@@ -203,7 +203,6 @@ knitr:
 :::{.incremental .medium-par}
 
 - En el caso del INE, las UPM pueden estar compuestas de muchas formas en relación a las manzanas: agrupaciones de manzanas, cortes de manzanas etc.
-
 
 - Estas abarcan aproximadamente 200 viviendas para las zonas urbanas y 90 para las zonas rurales.
 
@@ -240,7 +239,7 @@ knitr:
 ## [Muestreo complejo | Diseño II ENUT (2/2)]{.big-par}
 
 :::{.incremental .medium-par}
-- La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país
+- La población objetivo la constituyen todas las personas de 12 años o más, pertenecientes a 112 comunas del área urbana de todas regiones del país.
 
 - La II ENUT es representativa a nivel regional de las zonas urbanas del país
 
@@ -304,8 +303,8 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 - Se realizan diferentes ajustes según las incidencias que se presentan al intentar recolectar la muestra.
 - Algunos de ellos son:
   
-  - Ajuste por no respuesta
-  - Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por ej: edad, sexo o región)
+  - Ajuste por no respuesta.
+  - Calibración: ajuste de factores para que coincidan con totales conocidos de la población (por ej: edad, sexo o región).
 
 :::
 
@@ -321,7 +320,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 
 :::{.incremental .medium-par}
 
-- Toda estimación obtenida tiene cierto nivel de incertidumbre
+- Toda estimación obtenida tiene cierto nivel de incertidumbre.
 
 - La calidad estadística nos ayuda a evaluar qué tan confiables son los resultados.
 
@@ -417,7 +416,7 @@ $$\pi_\text{vivienda} = \pi_\text{upm}* \pi_\text{vivienda|upm}$$
 
 ## [Calidad estadística | Varianza, error estándar y CV (2/4)]{.big-par}
 
-La varianza, el error estándar y el CV nos ayudan a identificar qué tan buenos son nuestros resultados
+La varianza, el error estándar y el CV nos ayudan a identificar qué tan buenos son nuestros resultados.
 
 
 :::{.incremental .medium-par}
@@ -433,9 +432,9 @@ La varianza, el error estándar y el CV nos ayudan a identificar qué tan buenos
 
 . . .
 
-[*: La estimación de la varianza en diseños complejos no es trivial ⚠️. ]{.medium-par}
+[*: La estimación de la varianza en diseños complejos no es trivial ⚠️]{.medium-par}
 
-[Se utilizan diferentes metodologías para estimarla; aproximaciones mediante linealización de Taylor, pesos replicados, métodos del último conglomerado entre otros)]{.medium-par}
+[Se utilizan diferentes metodologías para estimarla; aproximaciones mediante linealización de Taylor, pesos replicados, métodos del último conglomerado entre otros).]{.medium-par}
 
 <!-- si si muy lindo en cv para la precision, pero veamos lo que hace con las proporciones jdjdj -->
 
